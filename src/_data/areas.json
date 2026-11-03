@@ -1,0 +1,50 @@
+[
+  {
+    "titulo": "Abastecimiento y contratación pública",
+    "icono": "carro",
+    "descripcion": "Planificación, organización y control del abastecimiento de una red asistencial de salud bajo la Ley N° 19.886 y la plataforma Mercado Público: compras y convenios centralizados, adquisiciones, logística y bodega central.",
+    "respaldo": "Más de 20 años a cargo del Abastecimiento en Red del Servicio de Salud Ñuble (2001–2022). Diplomado en Gestión de Abastecimiento (U. de Chile) y certificaciones de Competencias en Compras Públicas Nivel Avanzado (2024 y 2026)."
+  },
+  {
+    "titulo": "Administración y gestión de contratos",
+    "icono": "contrato",
+    "descripcion": "Administración, supervisión y seguimiento de contratos institucionales de suministro y prestación de servicios, desde la formulación de requerimientos hasta el control de su ejecución.",
+    "respaldo": "Responsable del área de Administración de Contratos del Departamento de Abastecimiento en Red y de la supervisión de contratos institucionales como asesor de la Subdirección. Curso Gestión de Contratos en el Sector Público (PUC, 2019)."
+  },
+  {
+    "titulo": "Control interno y control de gestión",
+    "icono": "control",
+    "descripcion": "Seguimiento de metas, indicadores y compromisos de gestión; gestión de riesgos; coordinación del seguimiento de observaciones de auditorías, fiscalizaciones y procesos de acreditación.",
+    "respaldo": "Encargado de Control Interno y Apoyo a la Gestión del Departamento de Recursos Físicos (2025 a la fecha). Docente de Control de Gestión y de Control de Procesos. Diplomado en Planificación, Control y Gestión (U. de Chile, en desarrollo)."
+  },
+  {
+    "titulo": "Gestión de recursos físicos y financieros",
+    "icono": "edificio",
+    "descripcion": "Gestión de infraestructura, equipamiento, mantenimiento y servicios de apoyo para la continuidad operacional de la red asistencial, con seguimiento del programa financiero.",
+    "respaldo": "Jefe Subrogante del Departamento de Recursos Físicos (2013–2018) y subrogante del Subdirector de Recursos Físicos y Financieros durante su jefatura de Abastecimiento en Red."
+  },
+  {
+    "titulo": "Formulación y gestión de proyectos de inversión",
+    "icono": "proyecto",
+    "descripcion": "Planificación y adquisición de equipamiento para proyectos hospitalarios, y supervisión de proyectos de inversión en infraestructura y equipamiento.",
+    "respaldo": "MBA con mención en Gerencia de Proyectos (U. Arturo Prat, 2019). Diseño e implementación del modelo de adquisición de equipamiento del Nuevo Hospital Regional de Ñuble (2022–2025)."
+  },
+  {
+    "titulo": "Transparencia, probidad e integridad pública",
+    "icono": "balanza",
+    "descripcion": "Cumplimiento de Transparencia Activa y Ley del Lobby, sistemas de integridad y códigos de ética institucionales.",
+    "respaldo": "Coordinación de Transparencia Activa y Ley del Lobby de la Subdirección (2025–2026); implementación del sistema de integridad y Código de Ética del Servicio (2022). Diplomado en Ética, Probidad y Transparencia en la Gestión Pública (UDD, 2025)."
+  },
+  {
+    "titulo": "Gestión de servicios de salud",
+    "icono": "salud",
+    "descripcion": "Gestión administrativa de la red pública de salud y de establecimientos hospitalarios, con foco en la continuidad de la atención.",
+    "respaldo": "Más de 30 años en el Servicio de Salud Ñuble. Diplomados en Gestión de Salud y Administración Hospitalaria (Escuela Andaluza de Salud Pública, 2014) y en Habilidades Directivas, mención Gestión Salud (U. de Chile, 2017)."
+  },
+  {
+    "titulo": "Planificación estratégica, liderazgo y mejora continua",
+    "icono": "brujula",
+    "descripcion": "Dirección de equipos multidisciplinarios, diseño y mejora de procesos, gestión del cambio y fortalecimiento de la gestión institucional.",
+    "respaldo": "Jefaturas con equipos de hasta 35 personas. Formación en liderazgo y habilidades directivas, gestión del cambio, Lean Operations y estrategia organizacional (U. de Chile)."
+  }
+]

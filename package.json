@@ -1,0 +1,14 @@
+{
+  "name": "sitio-juan-carlos-alvear",
+  "version": "1.0.0",
+  "description": "Sitio web profesional de Juan Carlos Alvear Sepúlveda",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.7"
+  },
+  "private": true,
+  "type": "module"
+}

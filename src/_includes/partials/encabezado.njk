@@ -1,0 +1,21 @@
+{%- from "partials/iconos.njk" import icono -%}
+<header class="encabezado" data-encabezado>
+  <div class="contenedor encabezado__fila">
+    <a class="marca" href="/" aria-label="{{ site.nombre }} — Inicio">
+      {% include "partials/marca.njk" %}
+    </a>
+    <button class="menu-boton" type="button" aria-expanded="false" aria-controls="navegacion-principal" data-menu-boton>
+      <span class="menu-boton__abrir">{{ icono("menu") }}</span>
+      <span class="menu-boton__cerrar">{{ icono("cerrar") }}</span>
+      <span class="sr">Menú</span>
+    </button>
+    <nav id="navegacion-principal" class="nav" aria-label="Navegación principal" data-menu>
+      <ul class="nav__lista">
+        {%- for item in navegacion %}
+        {%- set activo = (page.url == item.url) or (item.url != "/" and (page.url | string).startsWith(item.url)) %}
+        <li><a class="nav__enlace{% if item.url == '/contacto/' %} nav__enlace--accion{% endif %}" href="{{ item.url }}"{% if activo %} aria-current="page"{% endif %}>{{ item.texto }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

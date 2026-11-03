@@ -1,0 +1,195 @@
+# Configuración del panel de administración Pages CMS (https://app.pagescms.org)
+# Define qué contenidos puede editar el propietario del sitio desde el navegador.
+
+media:
+  - name: documentos
+    label: Documentos
+    input: src/media/documentos
+    output: /media/documentos
+    extensions: [pdf, doc, docx, xls, xlsx, xlsm, csv, ppt, pptx, odt, ods, odp, txt, zip]
+  - name: imagenes
+    label: Imágenes
+    input: src/media/imagenes
+    output: /media/imagenes
+    extensions: [jpg, jpeg, png, webp, svg]
+
+content:
+  - name: publicaciones
+    label: Publicaciones
+    type: collection
+    path: src/publicaciones
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, categoria, date]
+      primary: title
+      sort: [date, title]
+      default: { sort: date, order: desc }
+    fields:
+      - { name: title, label: Título, type: string, required: true }
+      - { name: resumen, label: Bajada o resumen, type: text, required: true, options: { maxlength: 300 } }
+      - { name: date, label: Fecha de publicación, type: date, required: true, options: { format: yyyy-MM-dd } }
+      - name: categoria
+        label: Categoría
+        type: select
+        required: true
+        options:
+          values: [Artículos profesionales, Análisis técnicos, Reflexiones, Opiniones profesionales, Experiencias de gestión, Estudios, Comentarios sobre normativa, Contenidos académicos]
+      - { name: portada, label: Imagen de portada (opcional), type: image, options: { media: imagenes } }
+      - name: referencias
+        label: Referencias y fuentes
+        type: object
+        list: true
+        fields:
+          - { name: texto, label: Texto de la referencia, type: string }
+          - { name: enlace, label: Enlace (opcional), type: string }
+      - { name: borrador, label: Borrador (no publicar todavía), type: boolean, default: false }
+      - { name: body, label: Contenido, type: rich-text, options: { format: markdown, media: imagenes } }
+
+  - name: biblioteca
+    label: Biblioteca digital
+    type: collection
+    path: src/biblioteca
+    filename: "{primary}.md"
+    view:
+      fields: [title, categoria, date]
+      primary: title
+      default: { sort: date, order: desc }
+    fields:
+      - { name: title, label: Nombre del documento, type: string, required: true }
+      - { name: descripcion, label: Descripción, type: text, required: true }
+      - name: categoria
+        label: Categoría
+        type: select
+        required: true
+        options:
+          values: [Currículum, Presentaciones, Informes, Manuales, Guías técnicas, Estudios, Material de capacitación, Normativa, Planillas y herramientas de gestión, Otros documentos]
+      - { name: date, label: Fecha de incorporación, type: date, required: true, options: { format: yyyy-MM-dd } }
+      - { name: archivo, label: Archivo (PDF, Word, Excel, PowerPoint…), type: file, options: { media: documentos } }
+      - { name: enlace, label: Enlace externo (si no se sube archivo), type: string }
+      - { name: destacado, label: Mostrar en la portada, type: boolean, default: false }
+      - { name: borrador, label: Borrador (no publicar todavía), type: boolean, default: false }
+
+  - name: conocimiento
+    label: Centro de conocimiento
+    type: collection
+    path: src/conocimiento
+    filename: "{primary}.md"
+    view:
+      fields: [title, materia, tipo]
+      primary: title
+      default: { sort: orden, order: asc }
+    fields:
+      - { name: title, label: Título, type: string, required: true }
+      - { name: descripcion, label: Descripción, type: text }
+      - name: materia
+        label: Materia
+        type: select
+        required: true
+        options:
+          values: [Contratación pública, Administración de contratos, Transparencia y probidad, Función pública, Control y fiscalización, Gestión de proyectos, Infraestructura y recursos físicos, Gestión financiera, Gestión de salud]
+      - name: tipo
+        label: Tipo de material
+        type: select
+        options:
+          values: [Normativa, Portal oficial, Jurisprudencia, Guía, Manual, Estudio, Material de consulta]
+      - { name: fuente, label: Fuente u organismo, type: string }
+      - { name: enlace, label: Enlace a la fuente oficial, type: string }
+      - { name: archivo, label: Archivo (opcional), type: file, options: { media: documentos } }
+      - { name: orden, label: Orden de aparición, type: number, default: 50 }
+      - { name: date, label: Fecha de incorporación, type: date, options: { format: yyyy-MM-dd } }
+      - { name: borrador, label: Borrador (no publicar todavía), type: boolean, default: false }
+
+  - name: proyectos
+    label: Proyectos
+    type: collection
+    path: src/proyectos
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, periodo]
+      primary: title
+      default: { sort: date, order: desc }
+    fields:
+      - { name: title, label: Título, type: string, required: true }
+      - { name: resumen, label: Descripción breve, type: text, required: true }
+      - { name: date, label: Fecha de inicio (para ordenar), type: date, required: true, options: { format: yyyy-MM-dd } }
+      - { name: periodo, label: Período (texto visible), type: string }
+      - { name: institucion, label: Institución y unidad, type: string }
+      - { name: objetivo, label: Objetivo, type: text }
+      - { name: contexto, label: Contexto, type: text }
+      - { name: participacion, label: Participación profesional, type: text }
+      - { name: resultados, label: Resultados o avances verificables, type: text }
+      - { name: cifras, label: Datos de dimensión (presupuesto, equipo…), type: string, list: true }
+      - { name: imagenes, label: Fotografías, type: image, options: { media: imagenes, multiple: true } }
+      - { name: documentos, label: Documentos complementarios, type: file, options: { media: documentos, multiple: true } }
+      - { name: destacado, label: Mostrar en la portada, type: boolean, default: false }
+      - { name: borrador, label: Borrador (no publicar todavía), type: boolean, default: false }
+      - { name: body, label: Descripción ampliada, type: rich-text, options: { format: markdown, media: imagenes } }
+
+  - name: configuracion
+    label: Datos generales del sitio
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - { name: nombre, label: Nombre completo, type: string }
+      - { name: iniciales, label: Iniciales del monograma, type: string }
+      - { name: titulo_profesional, label: Título profesional, type: string }
+      - { name: cargo_actual, label: Cargo actual, type: text }
+      - { name: descripcion, label: Descripción para buscadores (máx. 160–200 caracteres), type: text }
+      - { name: url, label: "Dirección del sitio (ej. https://www.juancarlosalvear.cl)", type: string }
+      - { name: idioma, label: Idioma, type: string }
+      - { name: ciudad, label: Ciudad, type: string }
+      - { name: correo, label: Correo de contacto público, type: string }
+      - { name: linkedin, label: Perfil de LinkedIn (URL completa), type: string }
+      - name: otros_perfiles
+        label: Otros perfiles profesionales
+        type: object
+        list: true
+        fields:
+          - { name: nombre, label: Nombre, type: string }
+          - { name: descripcion, label: Descripción, type: string }
+          - { name: url, label: Enlace, type: string }
+      - { name: foto, label: Fotografía profesional, type: image, options: { media: imagenes } }
+      - { name: cv_publico, label: Currículum público (PDF), type: file, options: { media: documentos } }
+      - name: formulario
+        label: Formulario de contacto
+        type: object
+        fields:
+          - { name: servicio, label: Servicio, type: select, options: { values: [formsubmit, web3forms] } }
+          - { name: web3forms_clave, label: Clave de acceso Web3Forms (solo si usa Web3Forms), type: string }
+      - { name: google_verificacion, label: Código de verificación de Google Search Console, type: string }
+      - { name: google_analytics, label: "ID de Google Analytics 4 (ej. G-XXXXXXX)", type: string }
+
+  - name: trayectoria
+    label: Trayectoria profesional
+    type: file
+    path: src/_data/trayectoria.json
+    format: json
+    list: true
+    fields:
+      - { name: cargo, label: Cargo, type: string }
+      - { name: institucion, label: Institución, type: string }
+      - { name: unidad, label: Unidad, type: string }
+      - { name: periodo, label: Período (texto completo), type: string }
+      - { name: anio_inicio, label: Año de inicio, type: string }
+      - { name: anio_termino, label: Año de término (o «Actualidad»), type: string }
+      - { name: modalidad, label: Modalidad (opcional), type: string }
+      - { name: resumen, label: Resumen, type: text }
+      - { name: funciones, label: Funciones, type: text, list: true }
+      - { name: dimension, label: Dimensión (presupuesto, equipo), type: string }
+      - { name: aportes, label: Aportes documentados, type: text, list: true }
+
+  - name: areas
+    label: Áreas de especialización
+    type: file
+    path: src/_data/areas.json
+    format: json
+    list: true
+    fields:
+      - { name: titulo, label: Título, type: string }
+      - name: icono
+        label: Ícono
+        type: select
+        options: { values: [carro, contrato, control, edificio, proyecto, balanza, salud, brujula, libro, birrete, maletin] }
+      - { name: descripcion, label: Descripción, type: text }
+      - { name: respaldo, label: Respaldo en la trayectoria, type: text }

@@ -1,0 +1,35 @@
+---
+layout: layouts/pagina.njk
+title: Centro de conocimiento
+antetitulo: Material de consulta y referencia
+bajada: Normativa, fuentes oficiales y material de referencia sobre administración pública, contratación pública, transparencia y control.
+descripcion_pagina: Centro de conocimiento con normativa y fuentes oficiales sobre contratación pública, transparencia, función pública y control en Chile.
+---
+{%- from "partials/iconos.njk" import icono -%}
+{%- from "partials/componentes.njk" import filtros -%}
+{%- set materias = collections.conocimiento | categorias("materia") -%}
+<section class="seccion">
+  <div class="contenedor" data-filtro-lista>
+    <p class="nota">A diferencia de las <a href="/publicaciones/">publicaciones</a>, que reúnen análisis y opiniones personales, este espacio agrupa material de consulta. Los enlaces conducen a las fuentes oficiales, donde se encuentran los textos vigentes.</p>
+    {{ filtros("conocimiento", "Buscar en el centro de conocimiento…", materias, "Materia") }}
+    <div data-items>
+    {%- for m in materias %}
+      <section class="materia" data-grupo>
+        <h2 class="materia__titulo">{{ m }}</h2>
+        <div class="rejilla rejilla--2">
+        {%- for c in collections.conocimiento %}{% if c.data.materia == m %}
+          {%- set destino = c.data.archivo or c.data.enlace %}
+          <article class="referencia" data-item data-categoria="{{ m }}" data-texto="{{ (c.data.title + ' ' + (c.data.descripcion or '') + ' ' + (c.data.tipo or '') + ' ' + (c.data.fuente or '') + ' ' + m) | lower }}">
+            <p class="meta"><span class="etiqueta">{{ c.data.tipo }}</span>{% if c.data.fuente %}<span>{{ c.data.fuente }}</span>{% endif %}</p>
+            <h3 class="referencia__titulo"><a href="{{ destino }}" target="_blank" rel="noopener">{{ c.data.title }} {{ icono("externo", "icono icono--chico") }}</a></h3>
+            {%- if c.data.descripcion %}<p class="referencia__texto">{{ c.data.descripcion }}</p>{% endif %}
+            {{ c.content | safe }}
+          </article>
+        {%- endif %}{% endfor %}
+        </div>
+      </section>
+    {%- endfor %}
+    </div>
+    <p class="vacio" data-sin-resultados hidden>No se encontraron referencias con esos criterios.</p>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+layout: layouts/pagina.njk
+title: Publicaciones y artículos
+antetitulo: Espacio editorial
+bajada: Artículos profesionales, análisis técnicos, comentarios sobre normativa y experiencias de gestión.
+permalink: /publicaciones/
+tipo: ""
+descripcion_pagina: Artículos, análisis técnicos y comentarios sobre gestión pública, contratación pública y control interno de Juan Carlos Alvear Sepúlveda.
+---
+{%- from "partials/componentes.njk" import tarjetaPublicacion, filtros -%}
+<section class="seccion">
+  <div class="contenedor" data-filtro-lista>
+    {{ filtros("publicaciones", "Buscar publicaciones…", collections.publicaciones | categorias) }}
+    {%- if collections.publicaciones | length %}
+    <div class="rejilla rejilla--3" data-items>
+      {%- for p in collections.publicaciones %}{{ tarjetaPublicacion(p) }}{% endfor %}
+    </div>
+    <p class="vacio" data-sin-resultados hidden>No se encontraron publicaciones con esos criterios.</p>
+    {%- else %}
+    <p class="vacio">Próximamente se publicarán nuevos artículos.</p>
+    {%- endif %}
+  </div>
+</section>

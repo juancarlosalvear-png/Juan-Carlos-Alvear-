@@ -1,0 +1,58 @@
+# Compila y publica el sitio en GitHub Pages cada vez que se guarda un cambio
+# (desde Pages CMS o directamente en GitHub).
+name: Publicar sitio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  compilar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Determinar dirección pública
+        id: url
+        run: |
+          if [ -f src/static/CNAME ]; then
+            echo "prefijo=/" >> "$GITHUB_OUTPUT"
+            echo "sitio=https://$(tr -d '[:space:]' < src/static/CNAME)" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.repository.name }}" = "${{ github.repository_owner }}.github.io" ]; then
+            echo "prefijo=/" >> "$GITHUB_OUTPUT"
+            echo "sitio=https://${{ github.repository_owner }}.github.io" >> "$GITHUB_OUTPUT"
+          else
+            echo "prefijo=/${{ github.event.repository.name }}/" >> "$GITHUB_OUTPUT"
+            echo "sitio=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compilar
+        run: npx @11ty/eleventy --pathprefix="${{ steps.url.outputs.prefijo }}"
+        env:
+          SITE_URL: ${{ steps.url.outputs.sitio }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publicar:
+    needs: compilar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

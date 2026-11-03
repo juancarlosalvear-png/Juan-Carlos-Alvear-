@@ -1,0 +1,116 @@
+---
+layout: layouts/pagina.njk
+title: Sobre mí
+antetitulo: Perfil profesional
+bajada: Ingeniero Comercial y MBA con mención en Gerencia de Proyectos, con más de 30 años de experiencia en el Servicio de Salud Ñuble.
+descripcion_pagina: Biografía profesional de Juan Carlos Alvear Sepúlveda, Ingeniero Comercial y MBA, con trayectoria en abastecimiento, contratación pública, recursos físicos, control interno y proyectos de inversión en el Servicio de Salud Ñuble.
+---
+{%- from "partials/iconos.njk" import icono -%}
+
+<section class="seccion">
+  <div class="contenedor perfil">
+    <div class="perfil__texto prosa">
+      <h2>Presentación</h2>
+      <p class="prosa__destacado">Juan Carlos Alvear Sepúlveda es Ingeniero Comercial, Licenciado en Ciencias Administrativas e Ingeniero de Ejecución en Administración de Empresas, con un Magíster en Administración de Empresas (MBA) con mención en Gerencia de Proyectos. Cuenta con más de 30 años de experiencia en el Servicio de Salud Ñuble, donde ha ejercido funciones de dirección y asesoría estratégica en control interno, recursos físicos y financieros, abastecimiento, compras públicas y gestión de proyectos de inversión.</p>
+
+      <h2>Trayectoria</h2>
+      <p>Inició su carrera en 1993 en el Hospital Clínico Herminda Martín de Chillán, como asesor de Abastecimiento y Servicios Generales. Entre 1996 y 2001 dirigió la Unidad de Abastecimiento y Servicios Generales del Servicio de Salud Ñuble, a cargo de las áreas de abastecimiento, servicios generales y movilización.</p>
+      <p>Entre 2001 y 2022 encabezó el Departamento de Abastecimiento en Red, con responsabilidad sobre Compras y Convenios Centralizados, Adquisiciones, Administración de Contratos y Droguería/Bodega Central de la Red Asistencial de Ñuble, conduciendo un equipo de 25 personas. En ese mismo período ejerció como Jefe Subrogante del Departamento de Recursos Físicos (2013–2018) y como subrogante del Subdirector de Recursos Físicos y Financieros.</p>
+      <p>A partir de 2022 lideró el diseño y la implementación del modelo de adquisición de equipos y equipamiento para el Nuevo Hospital Regional de Ñuble, iniciativa promovida por el Ministerio de Salud y posteriormente replicada por otros Servicios de Salud. Entre 2025 y 2026 asesoró a la Subdirección de Recursos Físicos y Financieros en transparencia, probidad e integridad. Actualmente se desempeña como Encargado de Control Interno y Apoyo a la Gestión del Departamento de Recursos Físicos.</p>
+
+      <h2>Experiencia institucional</h2>
+      <p>Su experiencia se ha desarrollado íntegramente en la red pública de salud de Ñuble, articulando las necesidades de los establecimientos asistenciales con los procesos de abastecimiento, contratación, administración contractual, infraestructura y control. A ello suma la docencia universitaria en control de gestión, control de procesos y logística, y la relatoría de cursos de capacitación en gestión de compras públicas.</p>
+
+      <h2>Orientación profesional</h2>
+      <p>Su perfil se orienta a los resultados y a la generación de valor público, con énfasis en el liderazgo de equipos multidisciplinarios, la planificación estratégica, la gestión de riesgos, la mejora continua y el fortalecimiento de la gestión institucional.</p>
+    </div>
+
+    <aside class="perfil__lateral">
+      <div class="ficha">
+        {%- if site.foto %}<img class="ficha__foto" src="{{ site.foto }}" alt="Fotografía de {{ site.nombre }}">{% else %}<div class="ficha__monograma" aria-hidden="true">{{ site.iniciales }}</div>{% endif %}
+        <h2 class="ficha__nombre">{{ site.nombre }}</h2>
+        <ul class="ficha__datos">
+          <li>{{ icono("maletin") }} <span>{{ site.cargo_actual }}</span></li>
+          <li>{{ icono("birrete") }} <span>Magíster en Administración de Empresas (MBA), Universidad Arturo Prat</span></li>
+          <li>{{ icono("ubicacion") }} <span>{{ site.ciudad }}</span></li>
+        </ul>
+        <a class="boton boton--primario boton--ancho" href="{{ site.cv_publico }}" download>{{ icono("descarga") }} Descargar currículum</a>
+        <a class="boton boton--secundario boton--ancho" href="/contacto/">{{ icono("correo") }} Contacto</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="seccion seccion--gris" id="formacion">
+  <div class="contenedor">
+    <p class="antetitulo">Formación</p>
+    <h2 class="seccion__titulo">Títulos y grados académicos</h2>
+    <ol class="lista-formacion">
+      {%- for t in formacion.titulos %}
+      <li class="formacion">
+        <span class="formacion__anio">{{ t.anio }}</span>
+        <div><h3 class="formacion__titulo">{{ t.titulo }}</h3><p class="formacion__lugar">{{ t.institucion }} · {{ t.ciudad }}</p></div>
+      </li>
+      {%- endfor %}
+    </ol>
+
+    <h2 class="seccion__titulo seccion__titulo--espacio">Estudios de especialización</h2>
+    <ol class="lista-formacion">
+      {%- for t in formacion.diplomados %}
+      <li class="formacion">
+        <span class="formacion__anio">{{ t.anio }}</span>
+        <div><h3 class="formacion__titulo">{{ t.titulo }}</h3><p class="formacion__lugar">{{ t.institucion }} · {{ t.ciudad }}</p></div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="contenedor rejilla rejilla--2">
+    <div>
+      <p class="antetitulo">Competencias</p>
+      <h2 class="seccion__titulo">Competencias profesionales</h2>
+      <ul class="lista-check">
+        <li>Dirección y asesoría estratégica en control interno, recursos físicos y financieros.</li>
+        <li>Planificación, organización y control del abastecimiento y la contratación pública (Ley N° 19.886).</li>
+        <li>Administración y supervisión de contratos institucionales.</li>
+        <li>Planificación y gestión de proyectos de inversión en infraestructura y equipamiento.</li>
+        <li>Liderazgo de equipos multidisciplinarios y coordinación institucional.</li>
+        <li>Planificación estratégica, gestión de riesgos y mejora continua.</li>
+        <li>Seguimiento de metas, indicadores, auditorías y compromisos de gestión.</li>
+        <li>Transparencia Activa, Ley del Lobby, probidad e integridad.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="antetitulo">Docencia</p>
+      <h2 class="seccion__titulo">Trayectoria docente</h2>
+      <ul class="lista-docencia">
+        {%- for d in formacion.docencia %}
+        <li><h3>{{ d.rol }}</h3>{% if d.institucion or d.periodo %}<p>{{ d.institucion }}{% if d.institucion and d.periodo %} · {% endif %}{{ d.periodo }}</p>{% endif %}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion--gris" id="cursos">
+  <div class="contenedor">
+    <p class="antetitulo">Formación continua</p>
+    <h2 class="seccion__titulo">Cursos y seminarios de perfeccionamiento</h2>
+    <p class="seccion__bajada">Cursos realizados desde 2015 a la fecha, según currículum vitae.</p>
+    <details class="desplegable">
+      <summary>Ver los {{ formacion.cursos | length }} cursos y seminarios</summary>
+      <div class="tabla-envoltura">
+        <table class="tabla">
+          <thead><tr><th scope="col">Curso o seminario</th><th scope="col">Institución</th><th scope="col">Período</th><th scope="col" class="num">Horas</th></tr></thead>
+          <tbody>
+            {%- for c in formacion.cursos %}
+            <tr><td>{{ c.nombre }}</td><td>{{ c.institucion or "—" }}</td><td class="nowrap">{{ c.periodo }}</td><td class="num">{{ c.horas }}</td></tr>
+            {%- endfor %}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+</section>

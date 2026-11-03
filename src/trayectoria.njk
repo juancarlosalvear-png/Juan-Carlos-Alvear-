@@ -1,0 +1,55 @@
+---
+layout: layouts/pagina.njk
+title: Trayectoria profesional
+antetitulo: Experiencia laboral
+bajada: Evolución profesional en la red pública de salud de Ñuble, desde 1993 a la fecha.
+descripcion_pagina: Línea de tiempo de la trayectoria profesional de Juan Carlos Alvear Sepúlveda en el Servicio de Salud Ñuble y el Hospital Clínico Herminda Martín de Chillán.
+---
+{%- from "partials/iconos.njk" import icono -%}
+<section class="seccion">
+  <div class="contenedor">
+    <ol class="linea-tiempo">
+      {%- for t in trayectoria %}
+      <li class="hito revelar{% if loop.first %} hito--actual{% endif %}">
+        <div class="hito__fecha"><span>{{ t.anio_inicio }}</span>{% if t.anio_termino != t.anio_inicio %}<span class="hito__hasta">{{ t.anio_termino }}</span>{% endif %}</div>
+        <div class="hito__punto" aria-hidden="true"></div>
+        <article class="hito__tarjeta">
+          <p class="meta"><span>{{ icono("calendario") }} {{ t.periodo }}</span>{% if t.modalidad %}<span class="etiqueta etiqueta--petroleo">{{ t.modalidad }}</span>{% endif %}</p>
+          <h2 class="hito__cargo">{{ t.cargo }}</h2>
+          <p class="hito__institucion">{{ t.institucion }} · {{ t.unidad }}</p>
+          <p class="hito__resumen">{{ t.resumen }}</p>
+          {%- if t.dimension %}<p class="hito__dimension">{{ t.dimension }}</p>{% endif %}
+          <details class="hito__detalle"{% if loop.index <= 3 %} open{% endif %}>
+            <summary>Funciones y responsabilidades</summary>
+            <ul>{% for f in t.funciones %}<li>{{ f }}</li>{% endfor %}</ul>
+          </details>
+          {%- if t.aportes | length %}
+          <div class="hito__aportes">
+            <h3>Aportes documentados</h3>
+            <ul>{% for a in t.aportes %}<li>{{ a }}</li>{% endfor %}</ul>
+          </div>
+          {%- endif %}
+        </article>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="seccion seccion--gris">
+  <div class="contenedor">
+    <p class="antetitulo">Docencia</p>
+    <h2 class="seccion__titulo">Trayectoria docente</h2>
+    <div class="rejilla rejilla--3">
+      {%- for d in formacion.docencia %}
+      <article class="tarjeta tarjeta--simple">
+        <div class="tarjeta__cuerpo">
+          {%- if d.periodo %}<p class="meta">{{ d.periodo }}</p>{% endif %}
+          <h3 class="tarjeta__titulo">{{ d.institucion or "Capacitación" }}</h3>
+          <p class="tarjeta__texto">{{ d.rol }}</p>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

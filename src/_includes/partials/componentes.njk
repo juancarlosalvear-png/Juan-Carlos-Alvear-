@@ -1,0 +1,66 @@
+{%- from "partials/iconos.njk" import icono -%}
+
+{%- macro tarjetaPublicacion(p) -%}
+<article class="tarjeta tarjeta--publicacion" data-item data-categoria="{{ p.data.categoria }}" data-texto="{{ (p.data.title + ' ' + (p.data.resumen or '') + ' ' + (p.data.categoria or '')) | lower }}">
+  {%- if p.data.portada %}<a class="tarjeta__imagen" href="{{ p.url }}" tabindex="-1" aria-hidden="true"><img src="{{ p.data.portada }}" alt="" loading="lazy"></a>{% endif %}
+  <div class="tarjeta__cuerpo">
+    <p class="meta"><span class="etiqueta">{{ p.data.categoria or "Artículo" }}</span><time datetime="{{ p.data.date | fechaISO }}">{{ p.data.date | fechaLarga }}</time></p>
+    <h3 class="tarjeta__titulo"><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+    {%- if p.data.resumen %}<p class="tarjeta__texto">{{ p.data.resumen }}</p>{% endif %}
+    <a class="enlace-flecha" href="{{ p.url }}" aria-hidden="true" tabindex="-1">Leer publicación {{ icono("flecha") }}</a>
+  </div>
+</article>
+{%- endmacro -%}
+
+{%- macro filaRecurso(r) -%}
+{%- set destino = r.data.archivo or r.data.enlace -%}
+{%- set formato = r.data.archivo | formatoArchivo if r.data.archivo else "Enlace externo" -%}
+{%- set tamano = r.data.archivo | tamanoArchivo -%}
+<article class="recurso" data-item data-categoria="{{ r.data.categoria }}" data-formato="{{ formato }}" data-texto="{{ (r.data.title + ' ' + (r.data.descripcion or '') + ' ' + (r.data.categoria or '') + ' ' + formato) | lower }}">
+  <div class="recurso__icono recurso__icono--{{ r.data.archivo | extension or 'web' }}" aria-hidden="true">{{ icono("archivo" if r.data.archivo else "enlace") }}<span>{{ (r.data.archivo | extension | upper) or "WEB" }}</span></div>
+  <div class="recurso__cuerpo">
+    <h3 class="recurso__titulo">{{ r.data.title }}</h3>
+    {%- if r.data.descripcion %}<p class="recurso__texto">{{ r.data.descripcion }}</p>{% endif %}
+    <p class="meta">
+      <span class="etiqueta">{{ r.data.categoria }}</span>
+      <span>{{ formato }}</span>
+      {%- if tamano %}<span>{{ tamano }}</span>{% endif %}
+      <span>Incorporado el <time datetime="{{ r.data.date | fechaISO }}">{{ r.data.date | fechaCorta }}</time></span>
+    </p>
+  </div>
+  <div class="recurso__acciones">
+    {%- if r.data.archivo %}
+    <a class="boton boton--secundario boton--chico" href="{{ r.data.archivo }}" target="_blank" rel="noopener">{{ icono("externo") }} Ver</a>
+    <a class="boton boton--primario boton--chico" href="{{ r.data.archivo }}" download>{{ icono("descarga") }} Descargar</a>
+    {%- elif r.data.enlace %}
+    <a class="boton boton--secundario boton--chico" href="{{ r.data.enlace }}" target="_blank" rel="noopener">{{ icono("externo") }} Abrir enlace</a>
+    {%- endif %}
+  </div>
+</article>
+{%- endmacro -%}
+
+{%- macro filtros(id, placeholder, categorias, etiquetaCategorias="Categoría", formatos=[]) -%}
+<div class="filtros" data-filtros="{{ id }}">
+  <label class="buscador">
+    <span class="sr">{{ placeholder }}</span>
+    {{ icono("buscar") }}
+    <input type="search" placeholder="{{ placeholder }}" data-filtro-texto autocomplete="off">
+  </label>
+  {%- if categorias | length %}
+  <div class="chips" role="group" aria-label="Filtrar por {{ etiquetaCategorias | lower }}">
+    <button type="button" class="chip" aria-pressed="true" data-filtro-categoria="">Todas</button>
+    {%- for c in categorias %}<button type="button" class="chip" aria-pressed="false" data-filtro-categoria="{{ c }}">{{ c }}</button>{% endfor %}
+  </div>
+  {%- endif %}
+  {%- if formatos | length > 1 %}
+  <label class="selector">
+    <span>Formato</span>
+    <select data-filtro-formato>
+      <option value="">Todos</option>
+      {%- for f in formatos %}<option value="{{ f }}">{{ f }}</option>{% endfor %}
+    </select>
+  </label>
+  {%- endif %}
+  <p class="filtros__estado" aria-live="polite" data-filtro-estado></p>
+</div>
+{%- endmacro -%}

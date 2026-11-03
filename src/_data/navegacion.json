@@ -1,0 +1,10 @@
+[
+  { "texto": "Sobre mí", "url": "/sobre-mi/" },
+  { "texto": "Trayectoria", "url": "/trayectoria/" },
+  { "texto": "Especialización", "url": "/especializacion/" },
+  { "texto": "Proyectos", "url": "/proyectos/" },
+  { "texto": "Publicaciones", "url": "/publicaciones/" },
+  { "texto": "Biblioteca", "url": "/biblioteca/" },
+  { "texto": "Conocimiento", "url": "/conocimiento/" },
+  { "texto": "Contacto", "url": "/contacto/" }
+]

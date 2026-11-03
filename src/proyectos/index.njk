@@ -1,0 +1,25 @@
+---
+layout: layouts/pagina.njk
+title: Proyectos y experiencias destacadas
+antetitulo: Proyectos
+bajada: Iniciativas y responsabilidades relevantes de la trayectoria, con su contexto, objetivo y participación profesional.
+permalink: /proyectos/
+descripcion_pagina: Proyectos y experiencias destacadas de Juan Carlos Alvear Sepúlveda, incluido el modelo de adquisición de equipamiento del Nuevo Hospital Regional de Ñuble.
+---
+{%- from "partials/iconos.njk" import icono -%}
+<section class="seccion">
+  <div class="contenedor lista-proyectos">
+    {%- for p in collections.proyectos %}
+    <article class="proyecto-fila revelar">
+      <div class="proyecto-fila__periodo">{{ p.data.periodo }}</div>
+      <div class="proyecto-fila__cuerpo">
+        <h2 class="proyecto-fila__titulo"><a href="{{ p.url }}">{{ p.data.title }}</a></h2>
+        <p class="proyecto-fila__institucion">{{ p.data.institucion }}</p>
+        <p>{{ p.data.resumen }}</p>
+        {%- if p.data.cifras | length %}<ul class="destacado__cifras">{% for c in p.data.cifras %}<li>{{ c }}</li>{% endfor %}</ul>{% endif %}
+        <a class="enlace-flecha" href="{{ p.url }}">Ver detalle {{ icono("flecha") }}</a>
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+</section>

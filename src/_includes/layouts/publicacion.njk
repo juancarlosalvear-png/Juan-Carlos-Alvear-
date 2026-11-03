@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+---
+{%- from "partials/iconos.njk" import icono -%}
+{%- set urlCompleta = entorno.url + page.url -%}
+<article class="articulo">
+  <header class="cabecera cabecera--articulo">
+    <div class="contenedor contenedor--estrecho">
+      <p class="antetitulo"><a href="/publicaciones/">Publicaciones</a>{% if categoria %} · {{ categoria }}{% endif %}</p>
+      <h1 class="cabecera__titulo">{{ title }}</h1>
+      {%- if resumen %}<p class="cabecera__bajada">{{ resumen }}</p>{% endif %}
+      <p class="meta meta--claro">
+        <span>{{ site.nombre }}</span>
+        <time datetime="{{ date | fechaISO }}">{{ date | fechaLarga }}</time>
+        <span>{{ content | minimoLectura }} min de lectura</span>
+      </p>
+    </div>
+  </header>
+  {%- if portada %}<div class="contenedor contenedor--estrecho"><img class="articulo__portada" src="{{ portada }}" alt=""></div>{% endif %}
+  <div class="contenedor contenedor--estrecho">
+    <div class="prosa articulo__cuerpo">
+      {{ content | safe }}
+    </div>
+    {%- if referencias | length %}
+    <section class="referencias" aria-labelledby="titulo-referencias">
+      <h2 id="titulo-referencias">Referencias y fuentes</h2>
+      <ol>
+        {%- for r in referencias %}
+        <li>{% if r.enlace %}<a href="{{ r.enlace }}" target="_blank" rel="noopener">{{ r.texto or r.enlace }}</a>{% else %}{{ r.texto }}{% endif %}</li>
+        {%- endfor %}
+      </ol>
+    </section>
+    {%- endif %}
+    <div class="compartir" aria-label="Compartir esta publicación">
+      <span class="compartir__titulo">Compartir</span>
+      <a class="compartir__boton" href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlCompleta | urlencode }}" target="_blank" rel="noopener" aria-label="Compartir en LinkedIn">{{ icono("linkedin") }}</a>
+      <a class="compartir__boton" href="https://wa.me/?text={{ (title + ' ' + urlCompleta) | urlencode }}" target="_blank" rel="noopener" aria-label="Compartir por WhatsApp">{{ icono("whatsapp") }}</a>
+      <a class="compartir__boton" href="https://x.com/intent/post?url={{ urlCompleta | urlencode }}&text={{ title | urlencode }}" target="_blank" rel="noopener" aria-label="Compartir en X">{{ icono("x") }}</a>
+      <a class="compartir__boton" href="mailto:?subject={{ title | urlencode }}&body={{ urlCompleta | urlencode }}" aria-label="Compartir por correo">{{ icono("correo") }}</a>
+      <button class="compartir__boton" type="button" data-copiar="{{ urlCompleta }}" aria-label="Copiar enlace">{{ icono("copiar") }}</button>
+      <span class="compartir__aviso" data-copiar-aviso aria-live="polite"></span>
+    </div>
+    <p class="articulo__nota">Los contenidos se publican a título personal y no representan la posición oficial de ninguna institución.</p>
+    <a class="enlace-flecha" href="/publicaciones/">Volver a publicaciones {{ icono("flecha") }}</a>
+  </div>
+</article>

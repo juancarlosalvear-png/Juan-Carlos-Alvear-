@@ -1,0 +1,20 @@
+---
+layout: layouts/pagina.njk
+title: Áreas de especialización
+antetitulo: Conocimiento y experiencia
+bajada: Ámbitos en que se concentra la experiencia profesional, cada uno vinculado a los cargos desempeñados y a la formación acreditada.
+descripcion_pagina: Áreas de especialización de Juan Carlos Alvear Sepúlveda - abastecimiento y contratación pública, administración de contratos, control interno, recursos físicos, proyectos de inversión, transparencia y gestión de servicios de salud.
+---
+{%- from "partials/iconos.njk" import icono -%}
+<section class="seccion">
+  <div class="contenedor rejilla rejilla--2">
+    {%- for a in areas %}
+    <article class="area revelar">
+      <span class="area__icono">{{ icono(a.icono) }}</span>
+      <h2 class="area__titulo">{{ a.titulo }}</h2>
+      <p class="area__texto">{{ a.descripcion }}</p>
+      <div class="area__respaldo"><p class="area__respaldo-etiqueta">Respaldo en la trayectoria</p><p>{{ a.respaldo }}</p></div>
+    </article>
+    {%- endfor %}
+  </div>
+</section>

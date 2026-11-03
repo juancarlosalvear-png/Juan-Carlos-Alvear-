@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+---
+{%- from "partials/iconos.njk" import icono -%}
+<section class="cabecera">
+  <div class="contenedor">
+    <p class="antetitulo"><a href="/proyectos/">Proyectos</a> · {{ periodo }}</p>
+    <h1 class="cabecera__titulo">{{ title }}</h1>
+    <p class="cabecera__bajada">{{ resumen }}</p>
+  </div>
+</section>
+<section class="seccion">
+  <div class="contenedor ficha-proyecto">
+    <div class="prosa">
+      {%- if contexto %}<h2>Contexto</h2><p>{{ contexto }}</p>{% endif %}
+      {%- if objetivo %}<h2>Objetivo</h2><p>{{ objetivo }}</p>{% endif %}
+      {%- if participacion %}<h2>Participación profesional</h2><p>{{ participacion }}</p>{% endif %}
+      {{ content | safe }}
+      {%- if resultados %}<h2>Resultados y avances</h2><p>{{ resultados }}</p>{% endif %}
+      {%- if imagenes | length %}
+      <h2>Imágenes</h2>
+      <div class="galeria">{% for i in imagenes %}<a href="{{ i }}" target="_blank" rel="noopener"><img src="{{ i }}" alt="Imagen del proyecto {{ title }}" loading="lazy"></a>{% endfor %}</div>
+      {%- endif %}
+    </div>
+    <aside class="ficha-proyecto__lateral">
+      <dl class="datos">
+        <dt>Período</dt><dd>{{ periodo }}</dd>
+        <dt>Institución</dt><dd>{{ institucion }}</dd>
+        {%- if cifras | length %}<dt>Dimensión</dt><dd><ul>{% for c in cifras %}<li>{{ c }}</li>{% endfor %}</ul></dd>{% endif %}
+      </dl>
+      {%- if documentos | length %}
+      <h2 class="lateral__titulo">Documentos</h2>
+      <ul class="lista-docs">{% for d in documentos %}<li><a href="{{ d }}" target="_blank" rel="noopener">{{ icono("archivo") }} {{ d | replace("/media/documentos/", "") }}</a></li>{% endfor %}</ul>
+      {%- endif %}
+      <a class="enlace-flecha" href="/proyectos/">Volver a proyectos {{ icono("flecha") }}</a>
+    </aside>
+  </div>
+</section>

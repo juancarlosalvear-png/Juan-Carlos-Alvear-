@@ -1,0 +1,83 @@
+{%- set tituloPagina = (title + " | " + site.nombre) if (title and title != site.nombre) else (site.nombre + " — " + "Gestión pública, contratación pública y control interno") -%}
+{%- set descripcionPagina = resumen or descripcion_pagina or site.descripcion -%}
+{%- set urlCanonica = entorno.url + page.url -%}
+{%- set imagenSocial = (portada | urlAbsoluta(entorno.url + "/")) if portada else (entorno.url + "/assets/img/og-imagen.png") -%}
+<!doctype html>
+<html lang="{{ site.idioma }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- set ga = site.google_analytics %}
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self'; font-src 'self'; script-src 'self'{% if ga %} https://www.googletagmanager.com{% endif %}; connect-src 'self'{% if ga %} https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com{% endif %}; form-action 'self' https://formsubmit.co https://api.web3forms.com; frame-src 'self'; object-src 'none'; base-uri 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>{{ tituloPagina }}</title>
+  <meta name="description" content="{{ descripcionPagina | textoPlano }}">
+  <meta name="author" content="{{ site.nombre }}">
+  {%- if noindex %}<meta name="robots" content="noindex">{% endif %}
+  {%- if site.google_verificacion %}<meta name="google-site-verification" content="{{ site.google_verificacion }}">{% endif %}
+  <link rel="canonical" href="{{ urlCanonica }}">
+  <meta property="og:type" content="{{ 'article' if tipo == 'publicacion' else 'website' }}">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:site_name" content="{{ site.nombre }}">
+  <meta property="og:title" content="{{ title or site.nombre }}">
+  <meta property="og:description" content="{{ descripcionPagina | textoPlano }}">
+  <meta property="og:url" content="{{ urlCanonica }}">
+  <meta property="og:image" content="{{ imagenSocial }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {%- if tipo == 'publicacion' and date %}<meta property="article:published_time" content="{{ date | fechaISO }}">{% endif %}
+  <meta name="theme-color" content="#0b1d38">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/estilos.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ site.nombre | json | safe }},
+    "url": {{ (entorno.url + "/") | json | safe }},
+    "jobTitle": "Encargado de Control Interno y Apoyo a la Gestión",
+    "worksFor": { "@type": "GovernmentOrganization", "name": "Servicio de Salud Ñuble" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Chillán", "addressRegion": "Ñuble", "addressCountry": "CL" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Universidad Arturo Prat" },
+      { "@type": "CollegeOrUniversity", "name": "Universidad del Bío-Bío" },
+      { "@type": "CollegeOrUniversity", "name": "Universidad Católica de la Santísima Concepción" }
+    ],
+    "knowsAbout": ["Contratación pública", "Ley de Compras Públicas", "Abastecimiento", "Administración de contratos", "Control interno", "Control de gestión", "Gestión de proyectos", "Gestión de recursos físicos", "Gestión de servicios de salud", "Transparencia y probidad"]
+    {%- if site.linkedin %},
+    "sameAs": [{{ site.linkedin | json | safe }}{% for p in site.otros_perfiles %}, {{ p.url | json | safe }}{% endfor %}]
+    {%- endif %}
+  }
+  </script>
+  {%- if tipo == 'publicacion' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ title | json | safe }},
+    "description": {{ (resumen or "") | json | safe }},
+    "datePublished": "{{ date | fechaISO }}",
+    "inLanguage": "es-CL",
+    "author": { "@type": "Person", "name": {{ site.nombre | json | safe }}, "url": {{ (entorno.url + "/") | json | safe }} },
+    "mainEntityOfPage": {{ urlCanonica | json | safe }}
+  }
+  </script>
+  {%- endif %}
+  <script src="/assets/js/sitio.js" defer></script>
+  {%- if ga %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga }}"></script>
+  <script src="/assets/js/analitica.js" data-ga="{{ ga }}" defer></script>
+  {%- endif %}
+</head>
+<body class="{{ clase_cuerpo or '' }}">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  {% include "partials/encabezado.njk" %}
+  <main id="contenido" tabindex="-1">
+    {{ content | safe }}
+  </main>
+  {% include "partials/pie.njk" %}
+</body>
+</html>

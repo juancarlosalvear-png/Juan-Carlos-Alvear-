@@ -1,0 +1,67 @@
+---
+layout: layouts/pagina.njk
+title: Contacto
+antetitulo: Conversemos
+bajada: Para consultas profesionales, invitaciones a actividades académicas o intercambio de experiencias.
+descripcion_pagina: Contacto profesional con Juan Carlos Alvear Sepúlveda.
+---
+{%- from "partials/iconos.njk" import icono -%}
+{%- set usaWeb3 = site.formulario.servicio == "web3forms" and site.formulario.web3forms_clave -%}
+<section class="seccion">
+  <div class="contenedor contacto">
+    <form class="formulario" method="POST" data-formulario
+      action="{{ 'https://api.web3forms.com/submit' if usaWeb3 else ('https://formsubmit.co/' + site.correo) }}">
+      <h2 class="formulario__titulo">Enviar un mensaje</h2>
+      {%- if usaWeb3 %}
+      <input type="hidden" name="access_key" value="{{ site.formulario.web3forms_clave }}">
+      <input type="hidden" name="subject" value="Nuevo mensaje desde el sitio web">
+      <input type="hidden" name="from_name" value="Sitio web {{ site.nombre }}">
+      <input type="hidden" name="redirect" value="{{ entorno.url }}/gracias/">
+      <input type="checkbox" name="botcheck" class="trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+      {%- else %}
+      <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio web">
+      <input type="hidden" name="_next" value="{{ entorno.url }}/gracias/">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" class="trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+      {%- endif %}
+      <div class="campo">
+        <label for="nombre">Nombre <span aria-hidden="true">*</span></label>
+        <input id="nombre" name="nombre" type="text" required maxlength="120" autocomplete="name">
+      </div>
+      <div class="campo">
+        <label for="correo">Correo electrónico <span aria-hidden="true">*</span></label>
+        <input id="correo" name="email" type="email" required maxlength="160" autocomplete="email">
+      </div>
+      <div class="campo">
+        <label for="institucion">Institución u organización</label>
+        <input id="institucion" name="institucion" type="text" maxlength="160" autocomplete="organization">
+      </div>
+      <div class="campo">
+        <label for="asunto">Asunto <span aria-hidden="true">*</span></label>
+        <input id="asunto" name="asunto" type="text" required maxlength="160">
+      </div>
+      <div class="campo">
+        <label for="mensaje">Mensaje <span aria-hidden="true">*</span></label>
+        <textarea id="mensaje" name="mensaje" rows="6" required minlength="10" maxlength="4000"></textarea>
+      </div>
+      <div class="campo campo--check">
+        <input id="consentimiento" name="consentimiento" type="checkbox" required value="Acepta">
+        <label for="consentimiento">Autorizo el uso de mis datos solo para responder este mensaje.</label>
+      </div>
+      <button class="boton boton--primario" type="submit">{{ icono("correo") }} Enviar mensaje</button>
+      <p class="formulario__nota">Los campos marcados con * son obligatorios. Los datos se usan solo para responder la consulta y no se comparten con terceros.</p>
+    </form>
+
+    <aside class="contacto__lateral">
+      <h2 class="lateral__titulo">Otros medios</h2>
+      <ul class="canales">
+        {%- if site.correo %}<li><a href="mailto:{{ site.correo }}">{{ icono("correo") }}<span><strong>Correo electrónico</strong>{{ site.correo }}</span></a></li>{% endif %}
+        {%- if site.linkedin %}<li><a href="{{ site.linkedin }}" target="_blank" rel="noopener">{{ icono("linkedin") }}<span><strong>LinkedIn</strong>Perfil profesional</span></a></li>{% endif %}
+        {%- for p in site.otros_perfiles %}<li><a href="{{ p.url }}" target="_blank" rel="noopener">{{ icono("enlace") }}<span><strong>{{ p.nombre }}</strong>{{ p.descripcion }}</span></a></li>{% endfor %}
+        {%- if site.cv_publico %}<li><a href="{{ site.cv_publico }}" download>{{ icono("descarga") }}<span><strong>Currículum vitae</strong>Descargar en PDF</span></a></li>{% endif %}
+        <li><span class="canal-fijo">{{ icono("ubicacion") }}<span><strong>Ubicación</strong>{{ site.ciudad }}</span></span></li>
+      </ul>
+    </aside>
+  </div>
+</section>

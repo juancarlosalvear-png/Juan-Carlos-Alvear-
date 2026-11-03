@@ -1,0 +1,50 @@
+{
+  "titulos": [
+    { "titulo": "Magíster en Administración de Empresas (MBA), con mención en Gerencia de Proyectos", "institucion": "Universidad Arturo Prat", "anio": "2019", "ciudad": "Santiago" },
+    { "titulo": "Ingeniero Comercial y Licenciado en Ciencias Administrativas", "institucion": "Universidad del Bío-Bío", "anio": "2009", "ciudad": "Chillán" },
+    { "titulo": "Ingeniero de Ejecución en Administración de Empresas", "institucion": "Universidad Católica de la Santísima Concepción", "anio": "2003", "ciudad": "Chillán" },
+    { "titulo": "Técnico Universitario en Administración de Empresas", "institucion": "Universidad del Bío-Bío", "anio": "1999", "ciudad": "Chillán" },
+    { "titulo": "Contador General", "institucion": "Liceo Comercial A-10 Chillán (Instituto Superior de Comercio)", "anio": "1992", "ciudad": "Chillán" }
+  ],
+  "diplomados": [
+    { "titulo": "Diplomado en Principio de Planificación, Control y Gestión", "institucion": "Universidad de Chile", "anio": "2026 (en desarrollo)", "ciudad": "Chillán" },
+    { "titulo": "Diplomado en Ética, Probidad y Transparencia en la Gestión Pública", "institucion": "Universidad del Desarrollo", "anio": "2025", "ciudad": "Concepción" },
+    { "titulo": "Diplomado en Habilidades Directivas, mención Gestión Salud", "institucion": "Universidad de Chile", "anio": "2017", "ciudad": "Chillán" },
+    { "titulo": "Diplomado en Gestión de Salud y Administración Hospitalaria", "institucion": "Escuela Andaluza de Salud Pública y Agencia de Calidad Sanitaria de Andalucía", "anio": "2014", "ciudad": "Olmué y Santiago" },
+    { "titulo": "Diplomado en Gestión de Abastecimiento", "institucion": "Universidad de Chile, Departamento de Ingeniería Industrial, Facultad de Ciencias Físicas y Matemáticas", "anio": "2005", "ciudad": "Concepción" }
+  ],
+  "cursos": [
+    { "nombre": "Introducción a Modelos de Seguimiento y Control Organizacional", "institucion": "Universidad de Chile", "periodo": "28/08/2026 – 28/09/2026", "horas": 20, "anio": 2026 },
+    { "nombre": "Power BI Essentials", "institucion": "Universidad de Chile", "periodo": "01/09/2026 – 14/09/2026", "horas": 24, "anio": 2026 },
+    { "nombre": "Certificación de Competencias en Compras Públicas Nivel Avanzado 2026", "institucion": "Dirección ChileCompra", "periodo": "25/08/2026", "horas": 4, "anio": 2026 },
+    { "nombre": "Introducción a la Estrategia en el Desarrollo de las Organizaciones Laborales", "institucion": "Universidad de Chile", "periodo": "28/07/2026 – 28/08/2026", "horas": 54, "anio": 2026 },
+    { "nombre": "Fundamentos de Lean Operations y Cultura Organizacional", "institucion": "Universidad de Chile", "periodo": "17/07/2026 – 17/08/2026", "horas": 54, "anio": 2026 },
+    { "nombre": "Denuncia, Investigación y Sanción de la Violencia Organizacional", "institucion": "Servicio Civil", "periodo": "09/03/2026 – 31/03/2026", "horas": 21, "anio": 2026 },
+    { "nombre": "Actualización en Ley de Transparencia", "institucion": "", "periodo": "22/09/2025 – 17/10/2025", "horas": 21, "anio": 2025 },
+    { "nombre": "Gestión del Cambio en la Organización", "institucion": "Universidad de Chile", "periodo": "22/05/2025 – 30/06/2025", "horas": 24, "anio": 2025 },
+    { "nombre": "Liderazgo y Habilidades Directivas", "institucion": "Universidad de Chile", "periodo": "07/10/2024 – 21/10/2024", "horas": 20, "anio": 2024 },
+    { "nombre": "Integridad Pública", "institucion": "Servicio Civil y PNUD", "periodo": "02/09/2024 – 10/10/2024", "horas": 32, "anio": 2024 },
+    { "nombre": "Certificación de Competencias en Compras Públicas Nivel Avanzado (Análisis y Seguimiento de la Compra; Liderazgo en la Gestión de Abastecimiento)", "institucion": "", "periodo": "31/07/2024 – 06/09/2024", "horas": 38, "anio": 2024 },
+    { "nombre": "Fortalecimiento de Ambientes de Trabajo", "institucion": "Programa BiblioRedes, Servicio Nacional del Patrimonio Cultural", "periodo": "02/01/2024 – 28/01/2024", "horas": 24, "anio": 2024 },
+    { "nombre": "Gestión de la Red Pública de Salud", "institucion": "", "periodo": "06/11/2023 – 19/11/2023", "horas": 32, "anio": 2023 },
+    { "nombre": "Normas Internacionales de Contabilidad para el Sector Público, Introducción a las NICSP 2023", "institucion": "Contraloría General de la República", "periodo": "30/03/2023 – 10/05/2023", "horas": 12, "anio": 2023 },
+    { "nombre": "Herramientas de Trabajo en Equipo", "institucion": "Programa BiblioRedes, Servicio Nacional del Patrimonio Cultural", "periodo": "10/08/2022 – 09/09/2022", "horas": 40, "anio": 2022 },
+    { "nombre": "Auditoría de Datos para la Eficiencia y Gestión de Contratos (preparación para la Prueba de Acreditación de Competencias en Compras Públicas, Nivel Avanzado)", "institucion": "Dirección de Compras y Contratación Pública", "periodo": "27/06/2022 – 19/08/2022", "horas": 36, "anio": 2022 },
+    { "nombre": "Gestión de la Creatividad", "institucion": "Programa BiblioRedes, Servicio Nacional del Patrimonio Cultural", "periodo": "06/06/2022 – 03/07/2022", "horas": 42, "anio": 2022 },
+    { "nombre": "Transformación Digital", "institucion": "Instituto Europeo de Posgrado (IEP)", "periodo": "10/09/2021 – 12/09/2021", "horas": 50, "anio": 2021 },
+    { "nombre": "Buen Trato Laboral y Protección a la Dignidad", "institucion": "Universidad del Bío-Bío", "periodo": "17/05/2021 – 04/06/2021", "horas": 24, "anio": 2021 },
+    { "nombre": "Design Thinking", "institucion": "Instituto Europeo de Posgrado (IEP)", "periodo": "13/09/2020", "horas": 50, "anio": 2020 },
+    { "nombre": "Método Harvard de Negociación", "institucion": "Instituto Europeo de Posgrado (IEP)", "periodo": "20/08/2020 – 27/08/2020", "horas": 50, "anio": 2020 },
+    { "nombre": "Gestión de Contratos en el Sector Público", "institucion": "Pontificia Universidad Católica de Chile", "periodo": "11/12/2019 – 17/12/2019", "horas": 36, "anio": 2019 },
+    { "nombre": "Eficiencia en el Precio y Ejecución de las Compras Públicas para Alcanzar una Mayor Eficiencia (preparación para prueba de acreditación)", "institucion": "Dirección de Compras y Contratación Pública", "periodo": "08/10/2019 – 06/12/2019", "horas": 36, "anio": 2019 },
+    { "nombre": "Gestión Estratégica de Abastecimiento, Clientes, Valores y Métricas", "institucion": "Pontificia Universidad Católica de Chile", "periodo": "19/05/2016 – 02/06/2016", "horas": 20, "anio": 2016 },
+    { "nombre": "Seminario «Encuentro por la Salud de Chile, Cenabast y la Red de Salud»", "institucion": "Central de Abastecimiento del Sistema Nacional de Servicios de Salud", "periodo": "04/05/2016 – 05/05/2016", "horas": 16, "anio": 2016 },
+    { "nombre": "Fortalecimiento de Habilidades de Liderazgo para Jefaturas", "institucion": "", "periodo": "07/04/2016 – 19/04/2016", "horas": 27, "anio": 2016 },
+    { "nombre": "Actualización de Conocimientos en Compras Públicas Nivel Avanzado", "institucion": "", "periodo": "19/11/2015 – 20/11/2015", "horas": 22, "anio": 2015 }
+  ],
+  "docencia": [
+    { "rol": "Docente de las asignaturas Control de Procesos y Logística/Distribución Internacional; Profesor Guía e Informante de Seminarios de Título", "institucion": "Universidad Católica de la Santísima Concepción", "periodo": "Agosto 2011 – diciembre 2014" },
+    { "rol": "Docente de las asignaturas Control de Gestión y Economía", "institucion": "Instituto Profesional Diego Portales", "periodo": "Marzo 2009 – diciembre 2010" },
+    { "rol": "Relator de cursos de capacitación en gestión de compras públicas", "institucion": "", "periodo": "" }
+  ]
+}

@@ -1,0 +1,21 @@
+---
+layout: layouts/pagina.njk
+title: Biblioteca digital
+antetitulo: Documentos y recursos
+bajada: Documentos, presentaciones, informes, guías, material de capacitación y herramientas de gestión para visualizar o descargar.
+descripcion_pagina: Biblioteca digital de Juan Carlos Alvear Sepúlveda - documentos, presentaciones, guías y material de capacitación sobre gestión pública y contratación pública.
+---
+{%- from "partials/componentes.njk" import filaRecurso, filtros -%}
+<section class="seccion">
+  <div class="contenedor" data-filtro-lista>
+    {{ filtros("biblioteca", "Buscar documentos…", collections.biblioteca | categorias, "Categoría", collections.biblioteca | formatos) }}
+    {%- if collections.biblioteca | length %}
+    <div class="lista-recursos" data-items>
+      {%- for r in collections.biblioteca %}{{ filaRecurso(r) }}{% endfor %}
+    </div>
+    <p class="vacio" data-sin-resultados hidden>No se encontraron documentos con esos criterios.</p>
+    {%- else %}
+    <p class="vacio">La biblioteca se encuentra en preparación.</p>
+    {%- endif %}
+  </div>
+</section>
