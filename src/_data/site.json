@@ -13,8 +13,8 @@
   "foto": "",
   "cv_publico": "/media/documentos/cv-juan-carlos-alvear-sepulveda.pdf",
   "formulario": {
-    "servicio": "formsubmit",
-    "web3forms_clave": ""
+    "servicio": "web3forms",
+    "web3forms_clave": "bbd9d318-e0d0-4ad8-a654-c4721f4e109e"
   },
   "google_verificacion": "",
   "google_analytics": ""
