@@ -273,6 +273,7 @@ main:focus { outline: none; }
 .referencia__titulo a { color: var(--marino-900); text-decoration: none; }
 .referencia__titulo a:hover { color: var(--petroleo-600); text-decoration: underline; }
 .referencia__texto { font-size: .9rem; color: var(--gris-600); margin: 0; }
+.referencia > p:not(.meta):not(.referencia__texto) { font-size: .82rem; color: var(--gris-600); margin: .7rem 0 0; padding-top: .6rem; border-top: 1px dashed var(--gris-200); }
 
 /* ---------- Línea de tiempo ---------- */
 .linea-tiempo { list-style: none; padding: 0; margin: 0; position: relative; }
