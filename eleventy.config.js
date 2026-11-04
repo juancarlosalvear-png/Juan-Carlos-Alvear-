@@ -21,6 +21,8 @@ function aFecha(v) {
 }
 
 export default function (eleventyConfig) {
+  // Versión de compilación: evita que los navegadores usen estilos o scripts antiguos guardados en caché.
+  eleventyConfig.addGlobalData("version", Date.now().toString(36));
   // Rutas relativas correctas tanto con dominio propio como en usuario.github.io/repositorio
   eleventyConfig.addPlugin(HtmlBasePlugin);
 

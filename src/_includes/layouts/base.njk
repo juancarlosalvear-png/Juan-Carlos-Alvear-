@@ -31,7 +31,7 @@
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/source-serif-4-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/estilos.css">
+  <link rel="stylesheet" href="/assets/css/estilos.css?v={{ version }}">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -66,7 +66,7 @@
   }
   </script>
   {%- endif %}
-  <script src="/assets/js/sitio.js" defer></script>
+  <script src="/assets/js/sitio.js?v={{ version }}" defer></script>
   {%- if ga %}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga }}"></script>
   <script src="/assets/js/analitica.js" data-ga="{{ ga }}" defer></script>
