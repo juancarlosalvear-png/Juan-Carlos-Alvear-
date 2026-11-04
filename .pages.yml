@@ -35,6 +35,7 @@ content:
         options:
           values: [Artículos profesionales, Análisis técnicos, Reflexiones, Opiniones profesionales, Experiencias de gestión, Estudios, Comentarios sobre normativa, Contenidos académicos, Reconocimientos]
       - { name: portada, label: Imagen de portada (opcional), type: image, options: { media: imagenes } }
+      - { name: portada_descripcion, label: Descripción de la imagen de portada (para buscadores y accesibilidad), type: string }
       - name: referencias
         label: Referencias y fuentes
         type: object

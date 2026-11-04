@@ -16,7 +16,7 @@ layout: layouts/base.njk
       </p>
     </div>
   </header>
-  {%- if portada %}<div class="contenedor contenedor--estrecho"><img class="articulo__portada" src="{{ portada }}" alt=""></div>{% endif %}
+  {%- if portada %}<div class="contenedor contenedor--estrecho"><figure class="articulo__portada-marco"><img class="articulo__portada" src="{{ portada }}" alt="{{ portada_descripcion or title }}"></figure></div>{% endif %}
   <div class="contenedor contenedor--estrecho">
     <div class="prosa articulo__cuerpo">
       {{ content | safe }}
