@@ -10,7 +10,7 @@ descripcion: >-
   institucional.
 categoria: Material de capacitación
 date: 2026-11-04
-archivo: /media/documentos/Curso_Ley_Compras_Administracion_Contratos_SSN_version_definitiva.pptx
+archivo: /media/documentos/Curso_Ley_Compras_Administracion_Contratos.pdf
 destacado: false
 borrador: false
 ---
