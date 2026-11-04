@@ -157,7 +157,7 @@ main:focus { outline: none; }
   .portada__rejilla { grid-template-columns: 1fr; }
   .portada__retrato { justify-self: start; max-width: 340px; margin-left: 2rem; }
 }
-@media (max-width: 520px) { .portada__retrato { margin-left: 1.4rem; max-width: 250px; } .retrato { aspect-ratio: 1 / 1; } .portada__ficha { left: -1.4rem; right: 1rem; } }
+@media (max-width: 520px) { .portada__retrato { margin-left: 1.4rem; max-width: 250px; } .retrato { aspect-ratio: 1 / 1; object-position: 50% 20%; } .portada__ficha { position: relative; left: -1.4rem; right: auto; bottom: auto; margin-top: -1.6rem; width: calc(100% + .4rem); } }
 
 /* ---------- Cifras ---------- */
 .cifras { background: var(--marino-950); color: #c3d0df; border-top: 1px solid rgba(255, 255, 255, .06); }
