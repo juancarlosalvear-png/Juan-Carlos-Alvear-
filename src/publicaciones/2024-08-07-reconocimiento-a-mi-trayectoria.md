@@ -3,11 +3,13 @@ title: Reconocimiento a mi trayectoria
 resumen: En la ceremonia del 45° aniversario del Servicio de Salud Ñuble fui reconocido junto a otros funcionarios por más de 30 años de servicio en la institución.
 date: 2024-08-07
 categoria: Reconocimientos
-portada: ""
+portada: /media/imagenes/reconocimiento-trayectoria-45-aniversario-ssn.jpg
 referencias:
   - texto: "Servicio de Salud Ñuble (7 de agosto de 2024). «Con un reconocimiento a la trayectoria, el Servicio de Salud Ñuble conmemoró su 45° Aniversario»."
     enlace: https://serviciodesaludnuble.cl/portal/con-un-reconocimiento-a-la-trayectoria-el-servicio-de-salud-nuble-conmemoro-su-45-aniversario/
 ---
+
+*Ceremonia del 45° aniversario del Servicio de Salud Ñuble. Fotografía: Servicio de Salud Ñuble, publicada con su autorización.*
 
 En agosto de 2024, el Servicio de Salud Ñuble conmemoró su 45° aniversario con una ceremonia encabezada por su Directora, Elizabeth Abarca Triviño, en la que participaron autoridades regionales y funcionarios de la red asistencial.
 
@@ -17,4 +19,4 @@ Ingresé al Servicio de Salud Ñuble cuando la institución cumplía 15 años. D
 
 Agradezco a la institución, a las jefaturas y a los equipos con los que he trabajado a lo largo de estos años.
 
-La nota completa, con la fotografía oficial de la ceremonia, está disponible en el portal del Servicio de Salud Ñuble (ver enlace en Referencias y fuentes).
+La nota completa está disponible en el portal del Servicio de Salud Ñuble (ver enlace en Referencias y fuentes).
