@@ -15,6 +15,10 @@ En agosto de 2024, el Servicio de Salud Ñuble conmemoró su 45° aniversario co
 
 En esa ocasión, la institución reconoció a funcionarias y funcionarios con más de 30 años de servicio, entre los cuales tuve el honor de ser distinguido.
 
+![Galardón de cristal sobre base de madera entregado por el Servicio de Salud Ñuble, con motivo de su 45° aniversario, a Juan Carlos Alvear Sepúlveda por su destacada trayectoria y 30 años al servicio de las familias de la Región. Chillán, agosto de 2024.](/media/imagenes/galardon-45-aniversario-ssn-juan-carlos-alvear.jpg)
+
+*Galardón otorgado por el Servicio de Salud Ñuble en su 45° aniversario, en reconocimiento a 30 años de servicio. Chillán, agosto de 2024.*
+
 Ingresé al Servicio de Salud Ñuble cuando la institución cumplía 15 años. Desde entonces he desarrollado mi carrera en ella, principalmente en abastecimiento, contratación pública, recursos físicos y control interno. Este reconocimiento me enorgullece y reafirma mi compromiso con los valores que han guiado mi trabajo en el servicio público: la probidad, el respeto a las personas y la equidad.
 
 Agradezco a la institución, a las jefaturas y a los equipos con los que he trabajado a lo largo de estos años.
