@@ -33,7 +33,7 @@ content:
         type: select
         required: true
         options:
-          values: [Artículos profesionales, Análisis técnicos, Reflexiones, Opiniones profesionales, Experiencias de gestión, Estudios, Comentarios sobre normativa, Contenidos académicos]
+          values: [Artículos profesionales, Análisis técnicos, Reflexiones, Opiniones profesionales, Experiencias de gestión, Estudios, Comentarios sobre normativa, Contenidos académicos, Reconocimientos]
       - { name: portada, label: Imagen de portada (opcional), type: image, options: { media: imagenes } }
       - name: referencias
         label: Referencias y fuentes
