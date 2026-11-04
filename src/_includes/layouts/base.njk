@@ -1,7 +1,8 @@
 {%- set tituloPagina = (title + " | " + site.nombre) if (title and title != site.nombre) else (site.nombre + " — " + "Gestión pública, contratación pública y control interno") -%}
 {%- set descripcionPagina = resumen or descripcion_pagina or site.descripcion -%}
 {%- set urlCanonica = entorno.url + page.url -%}
-{%- set imagenSocial = (portada | urlAbsoluta(entorno.url + "/")) if portada else (entorno.url + "/assets/img/og-imagen.png") -%}
+{%- set fotoAbsoluta = ((entorno.url + site.foto) if site.foto.startsWith("/") else (site.foto | urlAbsoluta(entorno.url + "/"))) if site.foto else "" -%}
+{%- set imagenSocial = (portada | urlAbsoluta(entorno.url + "/")) if portada else (fotoAbsoluta if (fotoAbsoluta and page.url == "/") else (entorno.url + "/assets/img/og-imagen.png")) -%}
 <!doctype html>
 <html lang="{{ site.idioma }}">
 <head>
@@ -38,6 +39,9 @@
     "@type": "Person",
     "name": {{ site.nombre | json | safe }},
     "url": {{ (entorno.url + "/") | json | safe }},
+    {%- if fotoAbsoluta %}
+    "image": {{ fotoAbsoluta | json | safe }},
+    {%- endif %}
     "jobTitle": "Encargado de Control Interno y Apoyo a la Gestión",
     "worksFor": { "@type": "GovernmentOrganization", "name": "Servicio de Salud Ñuble" },
     "address": { "@type": "PostalAddress", "addressLocality": "Chillán", "addressRegion": "Ñuble", "addressCountry": "CL" },
