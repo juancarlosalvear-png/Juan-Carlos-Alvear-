@@ -34,7 +34,9 @@ descripcion_pagina: Biografía profesional de Juan Carlos Alvear Sepúlveda, Ing
           <li>{{ icono("birrete") }} <span>Magíster en Administración de Empresas (MBA), Universidad Arturo Prat</span></li>
           <li>{{ icono("ubicacion") }} <span>{{ site.ciudad }}</span></li>
         </ul>
+        {%- if site.cv_publico %}
         <a class="boton boton--primario boton--ancho" href="{{ site.cv_publico }}" download>{{ icono("descarga") }} Descargar currículum</a>
+        {%- endif %}
         <a class="boton boton--secundario boton--ancho" href="/contacto/">{{ icono("correo") }} Contacto</a>
       </div>
     </aside>

@@ -15,7 +15,9 @@ clase_cuerpo: pagina-inicio
       <p class="portada__mensaje">Más de 30 años de experiencia en el Servicio de Salud Ñuble, en dirección y asesoría en control interno, recursos físicos y financieros, abastecimiento, compras públicas y gestión de proyectos de inversión.</p>
       <div class="portada__acciones">
         <a class="boton boton--claro" href="/trayectoria/">Conocer mi trayectoria {{ icono("flecha") }}</a>
+        {%- if site.cv_publico %}
         <a class="boton boton--contorno-claro" href="{{ site.cv_publico }}" download>{{ icono("descarga") }} Descargar currículum</a>
+        {%- endif %}
       </div>
     </div>
     <div class="portada__retrato">
