@@ -152,9 +152,9 @@ main:focus { outline: none; }
 .retrato--monograma span { font-family: var(--serif); font-weight: 700; font-size: clamp(4.5rem, 10vw, 7rem); color: rgba(255, 255, 255, .92); letter-spacing: .04em; border-bottom: 4px solid var(--petroleo-500); padding-bottom: .1em; line-height: 1; }
 @media (max-width: 880px) {
   .portada__rejilla { grid-template-columns: 1fr; }
-  .portada__retrato { justify-self: start; max-width: 340px; margin-left: 2rem; }
+  .portada__retrato { justify-self: center; max-width: 340px; margin-left: auto; margin-right: auto; }
 }
-@media (max-width: 520px) { .portada__retrato { margin-left: 1.4rem; max-width: 250px; } .retrato { aspect-ratio: 1 / 1; object-position: 50% 20%; } }
+@media (max-width: 520px) { .portada__retrato { margin-left: auto; margin-right: auto; max-width: 250px; } .retrato { aspect-ratio: 1 / 1; object-position: 50% 20%; } }
 
 /* ---------- Cifras ---------- */
 .cifras { background: var(--marino-950); color: #c3d0df; border-top: 1px solid rgba(255, 255, 255, .06); }
