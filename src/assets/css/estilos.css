@@ -150,14 +150,11 @@ main:focus { outline: none; }
 .retrato { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radio-grande); box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .6); }
 .retrato--monograma { display: grid; place-items: center; background: linear-gradient(155deg, var(--marino-700) 0%, var(--petroleo-700) 100%); border: 1px solid rgba(255, 255, 255, .12); }
 .retrato--monograma span { font-family: var(--serif); font-weight: 700; font-size: clamp(4.5rem, 10vw, 7rem); color: rgba(255, 255, 255, .92); letter-spacing: .04em; border-bottom: 4px solid var(--petroleo-500); padding-bottom: .1em; line-height: 1; }
-.portada__ficha { position: absolute; left: -2rem; bottom: 1.6rem; right: 2rem; background: #fff; color: var(--tinta); padding: 1rem 1.2rem; border-radius: var(--radio); box-shadow: var(--sombra-alta); }
-.portada__ficha-etiqueta { font-size: .68rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 600; color: var(--petroleo-600); margin-bottom: .25rem; }
-.portada__ficha-texto { font-size: .88rem; line-height: 1.45; margin: 0; color: var(--marino-900); font-weight: 500; }
 @media (max-width: 880px) {
   .portada__rejilla { grid-template-columns: 1fr; }
   .portada__retrato { justify-self: start; max-width: 340px; margin-left: 2rem; }
 }
-@media (max-width: 520px) { .portada__retrato { margin-left: 1.4rem; max-width: 250px; } .retrato { aspect-ratio: 1 / 1; object-position: 50% 20%; } .portada__ficha { position: relative; left: -1.4rem; right: auto; bottom: auto; margin-top: -1.6rem; width: calc(100% + .4rem); } }
+@media (max-width: 520px) { .portada__retrato { margin-left: 1.4rem; max-width: 250px; } .retrato { aspect-ratio: 1 / 1; object-position: 50% 20%; } }
 
 /* ---------- Cifras ---------- */
 .cifras { background: var(--marino-950); color: #c3d0df; border-top: 1px solid rgba(255, 255, 255, .06); }
