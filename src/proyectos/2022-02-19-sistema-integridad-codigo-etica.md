@@ -1,5 +1,5 @@
 ---
-title: Implementación del sistema de integridad y Código de Ética del Servicio de Salud Ñuble
+title: Implementación sistema de transparencia e Integridad del Servicio de Salud Ñuble
 resumen: Gestión de la implementación del sistema de integridad y del Código de Ética institucional.
 date: 2022-02-19
 periodo: 2022
