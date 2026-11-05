@@ -1,6 +1,6 @@
 ---
 title: Modelo de gestión para la adquisición de equipos y equipamiento del Nuevo Hospital Regional de Ñuble
-resumen: Diseño e implementación del modelo estratégico y operativo para planificar y adquirir el equipamiento del Nuevo Hospital Regional de Ñuble, con un presupuesto asociado de $60.000 millones.
+resumen: Diseño e implementación del modelo estratégico y operativo para planificar y adquirir el equipamiento del Nuevo Hospital Regional de Ñuble, reconocido por el Ministerio de Salud y replicado por otros Servicios de Salud.
 date: 2022-02-18
 periodo: 2022 – 2025
 institucion: Servicio de Salud Ñuble · Subdirección de Recursos Físicos y Financieros
@@ -9,7 +9,8 @@ objetivo: Planificar y gestionar la adquisición de los equipos y el equipamient
 contexto: El proyecto de construcción del Nuevo Hospital Regional de Ñuble requería un modelo específico para articular los requerimientos de equipamiento con los procesos de adquisición, en coordinación con equipos técnicos, profesionales y especialistas de distintas áreas.
 resultados: El modelo de gestión fue reconocido y promovido por el Ministerio de Salud y posteriormente replicado por otros Servicios de Salud en proyectos de adquisición de equipamiento de similar envergadura.
 cifras:
-  - Presupuesto asociado de $60.000 millones
+  - Diseño e implementación del modelo
+  - Reconocido por el Ministerio de Salud
   - Equipo de 4 personas
 destacado: true
 imagenes: []
