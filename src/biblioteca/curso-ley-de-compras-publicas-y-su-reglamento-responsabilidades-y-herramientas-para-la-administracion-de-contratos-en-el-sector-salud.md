@@ -11,6 +11,6 @@ descripcion: >-
 categoria: Material de capacitación
 date: 2026-11-04
 archivo: /media/documentos/Curso_Ley_Compras_Administracion_Contratos.pdf
-destacado: false
+destacado: true
 borrador: false
 ---

@@ -11,6 +11,6 @@ descripcion: >-
 categoria: Guías técnicas
 date: 2026-11-04
 archivo: /media/documentos/Preguntar_bien_para_decidir_mejor_JCAlvear.pdf
-destacado: true
+destacado: false
 borrador: false
 ---
