@@ -6,6 +6,7 @@ categoria: Reflexiones
 portada: ""
 referencias: []
 destacado: false
+ocultar_en_portada: true
 ---
 
 Este sitio reúne, en un solo lugar, mi trayectoria profesional y un espacio para compartir conocimientos vinculados a la gestión pública, en especial en el ámbito de la salud.

@@ -43,6 +43,7 @@ content:
         fields:
           - { name: texto, label: Texto de la referencia, type: string }
           - { name: enlace, label: Enlace (opcional), type: string }
+      - { name: ocultar_en_portada, label: No mostrar en la portada (solo en Publicaciones), type: boolean, default: false }
       - { name: borrador, label: Borrador (no publicar todavía), type: boolean, default: false }
       - { name: body, label: Contenido, type: rich-text, options: { format: markdown, media: imagenes } }
 

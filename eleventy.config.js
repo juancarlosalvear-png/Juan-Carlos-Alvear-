@@ -86,6 +86,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("categorias", (items, campo = "categoria") =>
     [...new Set((items || []).map((i) => i.data[campo]).filter(Boolean))].sort((a, b) => a.localeCompare(b, "es")));
   eleventyConfig.addFilter("destacados", (items) => (items || []).filter((i) => i.data.destacado));
+  eleventyConfig.addFilter("paraPortada", (items) => (items || []).filter((i) => !i.data.ocultar_en_portada));
   eleventyConfig.addFilter("textoPlano", (html) =>
     String(html || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim());
   eleventyConfig.addFilter("minimoLectura", (html) => {

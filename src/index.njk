@@ -95,7 +95,7 @@ clase_cuerpo: pagina-inicio
       </div>
       <a class="enlace-flecha" href="/publicaciones/">Ir a publicaciones {{ icono("flecha") }}</a>
     </div>
-    {%- set ultimas = collections.publicaciones | limitar(3) %}
+    {%- set ultimas = collections.publicaciones | paraPortada | limitar(3) %}
     {%- if ultimas | length %}
     <div class="rejilla rejilla--3">
       {%- for p in ultimas %}{{ tarjetaPublicacion(p) }}{% endfor %}
