@@ -12,6 +12,7 @@ cifras:
   - Diseño e implementación del modelo
   - Reconocido por el Ministerio de Salud
   - Equipo de 4 personas
+  - Presupuesto asignado aprox. MM$60.000
 destacado: true
 imagenes: []
 documentos: []
