@@ -66,15 +66,14 @@ main:focus { outline: none; }
 /* ---------- Marca ---------- */
 .marca { display: inline-flex; align-items: center; gap: .8rem; text-decoration: none; color: var(--marino-900); }
 .marca__monograma { width: 44px; height: 44px; flex: none; }
-.marca__fondo { fill: var(--marino-900); }
+.marca__trazo { fill: var(--marino-900); }
 .marca__barra { fill: var(--petroleo-500); }
-.marca__letras { font-family: var(--serif); font-weight: 700; font-size: 19px; letter-spacing: .5px; fill: #fff; }
 .marca__texto { display: flex; flex-direction: column; line-height: 1.15; }
 .marca__nombre { font-family: var(--serif); font-weight: 600; font-size: 1.08rem; letter-spacing: -.005em; }
 .marca__lema { white-space: nowrap; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gris-500); margin-top: .2rem; }
 .marca--clara { color: #fff; }
-.marca--clara .marca__fondo { fill: #fff; }
-.marca--clara .marca__letras { fill: var(--marino-900); }
+.marca--clara .marca__trazo { fill: #fff; }
+.marca--clara .marca__barra { fill: #3fb3c7; }
 .marca--clara .marca__lema { color: #9fb2c8; }
 
 /* ---------- Encabezado ---------- */
