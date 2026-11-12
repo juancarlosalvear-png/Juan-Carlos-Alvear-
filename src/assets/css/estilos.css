@@ -64,15 +64,19 @@ main:focus { outline: none; }
 .nowrap { white-space: nowrap; }
 
 /* ---------- Marca ---------- */
-.marca { display: inline-flex; align-items: center; gap: .8rem; text-decoration: none; color: var(--marino-900); }
-.marca__monograma { width: 44px; height: 44px; flex: none; }
-.marca__trazo { fill: var(--marino-900); }
+.marca { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; color: var(--marino-900); }
+.marca__monograma { width: 48px; height: 40px; flex: none; }
+.marca__trazo { fill: var(--marino-900); stroke: #fff; stroke-width: 2.4px; paint-order: stroke; }
+.marca__sol { fill: #e3a33b; }
+.marca__rayo { stroke: #e3a33b; stroke-width: 2.4px; stroke-linecap: round; }
 .marca__barra { fill: var(--petroleo-500); }
 .marca__texto { display: flex; flex-direction: column; line-height: 1.15; }
 .marca__nombre { font-family: var(--serif); font-weight: 600; font-size: 1.08rem; letter-spacing: -.005em; }
 .marca__lema { white-space: nowrap; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gris-500); margin-top: .2rem; }
 .marca--clara { color: #fff; }
-.marca--clara .marca__trazo { fill: #fff; }
+.marca--clara .marca__trazo { fill: #fff; stroke: var(--marino-950); }
+.marca--clara .marca__sol { fill: #f0b54a; }
+.marca--clara .marca__rayo { stroke: #f0b54a; }
 .marca--clara .marca__barra { fill: #3fb3c7; }
 .marca--clara .marca__lema { color: #9fb2c8; }
 
