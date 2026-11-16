@@ -96,6 +96,15 @@ Abra la entrada y use **Delete** o edite y guarde. Todo cambio queda registrado.
 
 ---
 
+### Agregar una carta o columna publicada en la prensa
+
+1. En el panel, abra **En la prensa (cartas y columnas)** y pulse **Agregar**.
+2. Complete el título tal como lo publicó el medio, la fecha de la edición, la página y el número de edición.
+3. En **Formato en el diario** elija `columna` (carta en columna angosta) o `destacada` (carta a todo el ancho bajo el rótulo «Destacada»).
+4. Suba el **recorte** de la edición impresa (imagen PNG o JPG de la carta).
+5. En **Dirección del artículo relacionado** escriba la dirección del artículo de reflexión del sitio, por ejemplo `/publicaciones/sobran-jefaturas-faltan-liderazgos/`. El vínculo se crea en ambos sentidos: la carta enlaza al artículo y el artículo muestra el recuadro «Publicado también en la prensa».
+6. Pegue el texto de la carta **sin** «Señor Director:» ni la firma; el sitio los agrega con el formato del diario.
+
 ## 4. Buscadores y estadísticas
 
 ### Google Search Console

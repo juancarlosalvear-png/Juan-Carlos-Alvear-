@@ -17,7 +17,7 @@
   {%- if noindex %}<meta name="robots" content="noindex">{% endif %}
   {%- if site.google_verificacion %}<meta name="google-site-verification" content="{{ site.google_verificacion }}">{% endif %}
   <link rel="canonical" href="{{ urlCanonica }}">
-  <meta property="og:type" content="{{ 'article' if tipo == 'publicacion' else 'website' }}">
+  <meta property="og:type" content="{{ 'article' if (tipo == 'publicacion' or tipo == 'prensa') else 'website' }}">
   <meta property="og:locale" content="es_CL">
   <meta property="og:site_name" content="{{ site.nombre }}">
   <meta property="og:title" content="{{ title or site.nombre }}">
@@ -25,7 +25,7 @@
   <meta property="og:url" content="{{ urlCanonica }}">
   <meta property="og:image" content="{{ imagenSocial }}">
   <meta name="twitter:card" content="summary_large_image">
-  {%- if tipo == 'publicacion' and date %}<meta property="article:published_time" content="{{ date | fechaISO }}">{% endif %}
+  {%- if (tipo == 'publicacion' or tipo == 'prensa') and date %}<meta property="article:published_time" content="{{ date | fechaISO }}">{% endif %}
   <meta name="theme-color" content="#0b1d38">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
@@ -66,6 +66,26 @@
     "datePublished": "{{ date | fechaISO }}",
     "inLanguage": "es-CL",
     "author": { "@type": "Person", "name": {{ site.nombre | json | safe }}, "url": {{ (entorno.url + "/") | json | safe }} },
+    "mainEntityOfPage": {{ urlCanonica | json | safe }}
+  }
+  </script>
+  {%- endif %}
+  {%- if tipo == 'prensa' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OpinionNewsArticle",
+    "headline": {{ title | json | safe }},
+    "description": {{ (resumen or "") | json | safe }},
+    "datePublished": "{{ date | fechaISO }}",
+    "inLanguage": "es-CL",
+    "articleSection": {{ (seccion or "Cartas al Director") | json | safe }},
+    "pagination": {{ (pagina or "") | json | safe }},
+    "author": { "@type": "Person", "name": {{ site.nombre | json | safe }}, "url": {{ (entorno.url + "/") | json | safe }} },
+    "publisher": { "@type": "NewsMediaOrganization", "name": {{ medio | json | safe }}{% if medio_sitio %}, "url": {{ medio_sitio | json | safe }}{% endif %} },
+    {%- if recorte %}
+    "image": {{ (recorte | urlAbsoluta(entorno.url + "/")) | json | safe }},
+    {%- endif %}
     "mainEntityOfPage": {{ urlCanonica | json | safe }}
   }
   </script>

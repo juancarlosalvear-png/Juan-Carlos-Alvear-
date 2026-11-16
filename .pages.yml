@@ -47,6 +47,36 @@ content:
       - { name: borrador, label: Borrador (no publicar todavía), type: boolean, default: false }
       - { name: body, label: Contenido, type: rich-text, options: { format: markdown, media: imagenes } }
 
+  - name: prensa
+    label: En la prensa (cartas y columnas)
+    type: collection
+    path: src/prensa
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, medio, date]
+      primary: title
+      default: { sort: date, order: desc }
+    fields:
+      - { name: title, label: Título de la carta (tal como se publicó), type: string, required: true }
+      - { name: resumen, label: Resumen para buscadores y tarjetas, type: text, required: true, options: { maxlength: 300 } }
+      - { name: date, label: Fecha de la edición, type: date, required: true, options: { format: yyyy-MM-dd } }
+      - { name: medio, label: Medio de comunicación, type: string, required: true, default: Diario La Discusión }
+      - { name: medio_sitio, label: Sitio web del medio, type: string, default: "https://www.ladiscusion.cl" }
+      - { name: seccion, label: Sección, type: string, default: Cartas al Director }
+      - { name: pagina, label: Página de la edición, type: string }
+      - { name: edicion, label: "Año y número de la edición (ej. Año 156 · Nº 51.940)", type: string }
+      - name: formato
+        label: Formato en el diario
+        type: select
+        options: { values: [columna, destacada] }
+        default: columna
+      - { name: firma, label: Firma, type: string, default: Juan Carlos Alvear Sepúlveda }
+      - { name: firma_titulo, label: Título bajo la firma, type: string, default: "Ingeniero Comercial, MBA" }
+      - { name: recorte, label: Recorte o facsímil de la edición impresa, type: image, options: { media: imagenes } }
+      - { name: articulo_relacionado, label: "Dirección del artículo relacionado del sitio (ej. /publicaciones/nombre-del-articulo/)", type: string }
+      - { name: borrador, label: Borrador (no publicar todavía), type: boolean, default: false }
+      - { name: body, label: "Texto de la carta (sin «Señor Director:» ni firma)", type: rich-text, options: { format: markdown } }
+
   - name: biblioteca
     label: Biblioteca digital
     type: collection

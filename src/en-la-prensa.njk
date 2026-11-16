@@ -1,0 +1,35 @@
+---
+layout: layouts/pagina.njk
+title: En la prensa
+antetitulo: Opinión publicada
+bajada: Cartas al Director y columnas publicadas en medios de comunicación, reproducidas con su formato de origen y vinculadas a las reflexiones ampliadas de este sitio.
+permalink: /en-la-prensa/
+tipo: ""
+descripcion_pagina: Cartas al Director de Juan Carlos Alvear Sepúlveda publicadas en el Diario La Discusión de Chillán sobre gestión pública, liderazgo e inteligencia artificial.
+---
+{%- from "partials/iconos.njk" import icono -%}
+<section class="seccion">
+  <div class="contenedor">
+    {%- if collections.prensa | length %}
+    <div class="rejilla rejilla--2 rejilla--prensa">
+      {%- for c in collections.prensa %}
+      {%- set relacionado = collections.publicaciones | buscarPorUrl(c.data.articulo_relacionado) %}
+      <article class="recorte">
+        <a class="recorte__hoja" href="{{ c.url }}" aria-label="Leer la carta «{{ c.data.title | replace('“', '') | replace('”', '') }}»">
+          <span class="recorte__folio"><span>{{ c.data.medio }}</span><span>{{ c.data.date | fechaDiario }}{% if c.data.pagina %} · p. {{ c.data.pagina }}{% endif %}</span></span>
+          <span class="recorte__seccion">{{ (c.data.seccion or "Cartas al Director") | upper }}</span>
+          <span class="recorte__titulo">{{ c.data.title }}</span>
+          <span class="recorte__extracto">Señor Director: {{ c.content | textoPlano | truncate(230) }}</span>
+        </a>
+        <div class="recorte__pie">
+          <a class="enlace-flecha" href="{{ c.url }}">Leer la carta {{ icono("flecha") }}</a>
+          {%- if relacionado %}<a class="recorte__vinculo" href="{{ relacionado.url }}">Reflexión ampliada: {{ relacionado.data.title }}</a>{% endif %}
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <p class="vacio">Próximamente se incorporarán publicaciones en medios.</p>
+    {%- endif %}
+  </div>
+</section>

@@ -8,8 +8,10 @@ tipo: ""
 descripcion_pagina: Artículos, análisis técnicos y comentarios sobre gestión pública, contratación pública y control interno de Juan Carlos Alvear Sepúlveda.
 ---
 {%- from "partials/componentes.njk" import tarjetaPublicacion, filtros -%}
+{%- from "partials/iconos.njk" import icono -%}
 <section class="seccion">
   <div class="contenedor" data-filtro-lista>
+    <p class="aviso-prensa">{{ icono("flecha") }} Algunas de estas reflexiones fueron publicadas en versión breve como Cartas al Director. <a href="/en-la-prensa/">Ver En la prensa</a></p>
     {{ filtros("publicaciones", "Buscar publicaciones…", collections.publicaciones | categorias) }}
     {%- if collections.publicaciones | length %}
     <div class="rejilla rejilla--3" data-items>

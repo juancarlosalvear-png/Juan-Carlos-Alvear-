@@ -40,6 +40,8 @@ export default function (eleventyConfig) {
   const porFecha = (a, b) => (aFecha(b.data.date) || 0) - (aFecha(a.data.date) || 0);
   eleventyConfig.addCollection("publicaciones", (api) =>
     api.getFilteredByGlob("src/publicaciones/*.md").sort(porFecha));
+  eleventyConfig.addCollection("prensa", (api) =>
+    api.getFilteredByGlob("src/prensa/*.md").sort(porFecha));
   eleventyConfig.addCollection("proyectos", (api) =>
     api.getFilteredByGlob("src/proyectos/*.md").sort(porFecha));
   eleventyConfig.addCollection("biblioteca", (api) =>
@@ -56,6 +58,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("fechaCorta", (v) => {
     const d = aFecha(v); if (!d) return "";
     return `${String(d.getUTCDate()).padStart(2, "0")}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${d.getUTCFullYear()}`;
+  });
+  // Fecha con el día de la semana, tal como aparece en el folio de un diario
+  const DIAS = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+  eleventyConfig.addFilter("fechaDiario", (v) => {
+    const d = aFecha(v); if (!d) return "";
+    return `${DIAS[d.getUTCDay()]} ${d.getUTCDate()} de ${MESES[d.getUTCMonth()]} de ${d.getUTCFullYear()}`;
   });
   eleventyConfig.addFilter("fechaISO", (v) => { const d = aFecha(v); return d ? d.toISOString().slice(0, 10) : ""; });
   eleventyConfig.addFilter("anio", (v) => { const d = aFecha(v); return d ? d.getUTCFullYear() : ""; });
@@ -82,6 +90,12 @@ export default function (eleventyConfig) {
     [...new Set((items || []).map((i) => i.data.archivo
       ? (FORMATOS[path.extname(String(i.data.archivo)).slice(1).toLowerCase()] || path.extname(String(i.data.archivo)).slice(1).toUpperCase())
       : "Enlace externo"))].sort((a, b) => a.localeCompare(b, "es")));
+  // Vínculos entre cartas publicadas en la prensa y artículos del sitio
+  const normalizarUrl = (u) => String(u || "").trim().replace(/\/?$/, "/");
+  eleventyConfig.addFilter("buscarPorUrl", (items, url) =>
+    url ? (items || []).find((i) => normalizarUrl(i.url) === normalizarUrl(url)) : undefined);
+  eleventyConfig.addFilter("relacionadosCon", (items, url) =>
+    (items || []).filter((i) => i.data.articulo_relacionado && normalizarUrl(i.data.articulo_relacionado) === normalizarUrl(url)));
   eleventyConfig.addFilter("limitar", (arr, n) => (arr || []).slice(0, n));
   eleventyConfig.addFilter("categorias", (items, campo = "categoria") =>
     [...new Set((items || []).map((i) => i.data[campo]).filter(Boolean))].sort((a, b) => a.localeCompare(b, "es")));

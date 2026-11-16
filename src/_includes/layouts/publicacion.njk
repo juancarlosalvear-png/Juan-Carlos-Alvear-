@@ -21,6 +21,19 @@ layout: layouts/base.njk
     <div class="prosa articulo__cuerpo">
       {{ content | safe }}
     </div>
+    {%- set enPrensa = collections.prensa | relacionadosCon(page.url) %}
+    {%- if enPrensa | length %}
+    <aside class="vinculo-prensa" aria-label="Publicado en la prensa">
+      <p class="vinculo-prensa__etiqueta">Publicado también en la prensa</p>
+      {%- for c in enPrensa %}
+      <a class="vinculo-prensa__item" href="{{ c.url }}">
+        <span class="vinculo-prensa__medio">{{ c.data.medio }} · {{ c.data.seccion or "Cartas al Director" }} · {{ c.data.date | fechaLarga }}{% if c.data.pagina %} · p. {{ c.data.pagina }}{% endif %}</span>
+        <span class="vinculo-prensa__titulo">{{ c.data.title }}</span>
+        <span class="enlace-flecha">Ver la carta publicada {{ icono("flecha") }}</span>
+      </a>
+      {%- endfor %}
+    </aside>
+    {%- endif %}
     {%- if referencias | length %}
     <section class="referencias" aria-labelledby="titulo-referencias">
       <h2 id="titulo-referencias">Referencias y fuentes</h2>

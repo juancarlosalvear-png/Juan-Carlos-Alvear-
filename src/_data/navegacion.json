@@ -4,6 +4,7 @@
   { "texto": "Especialización", "url": "/especializacion/" },
   { "texto": "Proyectos", "url": "/proyectos/" },
   { "texto": "Publicaciones", "url": "/publicaciones/" },
+  { "texto": "En la prensa", "url": "/en-la-prensa/" },
   { "texto": "Biblioteca", "url": "/biblioteca/" },
   { "texto": "Conocimiento", "url": "/conocimiento/" },
   { "texto": "Contacto", "url": "/contacto/" }

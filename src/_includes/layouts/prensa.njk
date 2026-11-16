@@ -1,0 +1,80 @@
+---
+layout: layouts/base.njk
+---
+{%- from "partials/iconos.njk" import icono -%}
+{%- set urlCompleta = entorno.url + page.url -%}
+{%- set relacionado = collections.publicaciones | buscarPorUrl(articulo_relacionado) -%}
+{%- set dominioMedio = (medio_sitio or "") | replace("https://", "") | replace("http://", "") -%}
+<article class="articulo">
+  <header class="cabecera cabecera--articulo">
+    <div class="contenedor contenedor--estrecho">
+      <p class="antetitulo"><a href="/en-la-prensa/">En la prensa</a> · {{ seccion or "Cartas al Director" }}</p>
+      <h1 class="cabecera__titulo">{{ title }}</h1>
+      {%- if resumen %}<p class="cabecera__bajada">{{ resumen }}</p>{% endif %}
+      <p class="meta meta--claro">
+        <span>{{ medio }}</span>
+        <time datetime="{{ date | fechaISO }}">{{ date | fechaLarga }}</time>
+        {%- if pagina %}<span>Página {{ pagina }}</span>{% endif %}
+      </p>
+    </div>
+  </header>
+
+  <div class="contenedor contenedor--estrecho">
+    {#- Reproducción de la carta con la tipografía y composición de la edición impresa -#}
+    <figure class="diario diario--{{ formato or 'columna' }}">
+      <div class="diario__hoja">
+        <div class="diario__folio">
+          <span>{{ dominioMedio }}</span>
+          <span>{{ date | fechaDiario }} <b>{{ pagina }}</b></span>
+        </div>
+        <p class="diario__seccion">{{ (seccion or "Cartas al Director") | upper }}</p>
+        {%- if formato == "destacada" %}<p class="diario__destacada">Destacada</p>{% endif %}
+        <div class="diario__carta">
+          <h2 class="diario__titulo">{{ title }}</h2>
+          <p class="diario__saludo">Señor Director:</p>
+          <div class="diario__texto">{{ content | safe }}</div>
+          <p class="diario__firma"><span>{{ firma }}</span>{% if firma_titulo %}<span>{{ firma_titulo }}</span>{% endif %}</p>
+        </div>
+      </div>
+      <figcaption class="diario__fuente">
+        Publicada en {{ medio }}, sección {{ seccion or "Cartas al Director" }}, {{ date | fechaDiario | lower }}{% if pagina %}, página {{ pagina }}{% endif %}{% if edicion %} ({{ edicion }}){% endif %}. Transcripción íntegra del texto impreso.
+      </figcaption>
+    </figure>
+
+    {%- if recorte %}
+    <section class="facsimil" aria-labelledby="titulo-facsimil">
+      <h2 id="titulo-facsimil" class="facsimil__titulo">Facsímil de la edición impresa</h2>
+      <a class="facsimil__marco facsimil__marco--{{ formato or 'columna' }}" href="{{ recorte }}" target="_blank" rel="noopener" aria-label="Abrir el facsímil en tamaño completo">
+        <img src="{{ recorte }}" alt="Recorte de la carta «{{ title | replace('“', '') | replace('”', '') }}» publicada en {{ medio }} el {{ date | fechaLarga }}" loading="lazy">
+      </a>
+      <p class="facsimil__nota">Recorte de la página {{ pagina }} de la edición del {{ date | fechaLarga }}. Haga clic para ampliar.</p>
+    </section>
+    {%- endif %}
+
+    {%- if relacionado %}
+    <aside class="vinculo-articulo" aria-labelledby="titulo-vinculo">
+      <p class="vinculo-articulo__etiqueta">Reflexión ampliada en este sitio</p>
+      <h2 id="titulo-vinculo" class="vinculo-articulo__titulo"><a href="{{ relacionado.url }}">{{ relacionado.data.title }}</a></h2>
+      {%- if relacionado.data.resumen %}<p class="vinculo-articulo__texto">{{ relacionado.data.resumen }}</p>{% endif %}
+      <a class="enlace-flecha" href="{{ relacionado.url }}">Leer el artículo completo {{ icono("flecha") }}</a>
+    </aside>
+    {%- endif %}
+
+    <section class="referencias" aria-labelledby="titulo-cita">
+      <h2 id="titulo-cita">Cómo citar esta carta</h2>
+      <p class="cita-sugerida">Alvear Sepúlveda, J. C. ({{ date | anio }}, {{ date | fechaLarga | replace(" de " + (date | anio), "") }}). {{ title }} [Carta al Director]. <i>{{ medio }}</i>{% if pagina %}, p. {{ pagina }}{% endif %}.</p>
+    </section>
+
+    <div class="compartir" aria-label="Compartir esta carta">
+      <span class="compartir__titulo">Compartir</span>
+      <a class="compartir__boton" href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlCompleta | urlencode }}" target="_blank" rel="noopener" aria-label="Compartir en LinkedIn">{{ icono("linkedin") }}</a>
+      <a class="compartir__boton" href="https://wa.me/?text={{ (title + ' ' + urlCompleta) | urlencode }}" target="_blank" rel="noopener" aria-label="Compartir por WhatsApp">{{ icono("whatsapp") }}</a>
+      <a class="compartir__boton" href="https://x.com/intent/post?url={{ urlCompleta | urlencode }}&text={{ title | urlencode }}" target="_blank" rel="noopener" aria-label="Compartir en X">{{ icono("x") }}</a>
+      <a class="compartir__boton" href="mailto:?subject={{ title | urlencode }}&body={{ urlCompleta | urlencode }}" aria-label="Compartir por correo">{{ icono("correo") }}</a>
+      <button class="compartir__boton" type="button" data-copiar="{{ urlCompleta }}" aria-label="Copiar enlace">{{ icono("copiar") }}</button>
+      <span class="compartir__aviso" data-copiar-aviso aria-live="polite"></span>
+    </div>
+    <p class="articulo__nota">Carta publicada a título personal; no representa la posición oficial de ninguna institución. El diseño de la reproducción evoca la edición impresa del medio, cuyo facsímil se incluye como respaldo.</p>
+    <a class="enlace-flecha" href="/en-la-prensa/">Volver a En la prensa {{ icono("flecha") }}</a>
+  </div>
+</article>
