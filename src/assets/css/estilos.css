@@ -197,6 +197,10 @@ main:focus { outline: none; }
 .cabecera .contenedor { position: relative; }
 .cabecera .antetitulo { color: #8fd0dc; }
 .cabecera__titulo { color: #fff; font-size: clamp(2rem, 4.8vw, 3.2rem); max-width: 50rem; letter-spacing: -.02em; }
+.seccion--banner { padding-top: clamp(1.6rem, 4vw, 2.6rem); padding-bottom: 0; }
+.banner-imagen { margin: 0; border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra-alta); background: var(--marino-900); }
+.banner-imagen img { display: block; width: 100%; height: auto; }
+.seccion--lista { padding-top: clamp(1.6rem, 4vw, 2.4rem); }
 .cabecera__bajada { font-size: clamp(1rem, 1.8vw, 1.16rem); max-width: 44rem; margin: 0; line-height: 1.65; }
 
 /* ---------- Áreas ---------- */

@@ -6,7 +6,17 @@ bajada: Documentos, presentaciones, informes, guías, material de capacitación 
 descripcion_pagina: Biblioteca digital de Juan Carlos Alvear Sepúlveda - documentos, presentaciones, guías y material de capacitación sobre gestión pública y contratación pública.
 ---
 {%- from "partials/componentes.njk" import filaRecurso, filtros -%}
-<section class="seccion">
+<section class="seccion seccion--banner">
+  <div class="contenedor">
+    <figure class="banner-imagen">
+      <picture>
+        <source media="(max-width: 640px)" srcset="/media/imagenes/banner-biblioteca-movil.webp" width="900" height="627">
+        <img src="/media/imagenes/banner-biblioteca.webp" width="1600" height="687" alt="Relator exponiendo sobre contratación pública en la gestión del Estado: marco normativo, procedimientos y buenas prácticas" loading="eager" decoding="async">
+      </picture>
+    </figure>
+  </div>
+</section>
+<section class="seccion seccion--lista">
   <div class="contenedor" data-filtro-lista>
     {{ filtros("biblioteca", "Buscar documentos…", collections.biblioteca | categorias, "Categoría", collections.biblioteca | formatos) }}
     {%- if collections.biblioteca | length %}
