@@ -41,6 +41,10 @@ layout: layouts/base.njk
       </figcaption>
     </figure>
 
+    {%- if enlace_diario %}
+    <p class="enlace-diario"><a class="enlace-flecha" href="{{ enlace_diario }}" target="_blank" rel="noopener">Leer en la edición original de {{ medio }}{% if pagina %} (página {{ pagina }}){% endif %} {{ icono("flecha") }}</a></p>
+    {%- endif %}
+
     {%- if recorte %}
     <section class="facsimil" aria-labelledby="titulo-facsimil">
       <h2 id="titulo-facsimil" class="facsimil__titulo">Facsímil de la edición impresa</h2>

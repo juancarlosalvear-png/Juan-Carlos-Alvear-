@@ -521,3 +521,4 @@ main:focus { outline: none; }
 .recorte__vinculo:hover { color: var(--petroleo-700); }
 @media print { .facsimil, .vinculo-articulo { break-inside: avoid; } }
 .vinculo-articulo .enlace-flecha, .vinculo-prensa .enlace-flecha { margin-bottom: 0; }
+.enlace-diario { margin: 1.5rem 0 0; }

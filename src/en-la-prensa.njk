@@ -23,6 +23,7 @@ descripcion_pagina: Cartas al Director de Juan Carlos Alvear Sepúlveda publicad
         </a>
         <div class="recorte__pie">
           <a class="enlace-flecha" href="{{ c.url }}">Leer la carta {{ icono("flecha") }}</a>
+          {%- if c.data.enlace_diario %}<a class="enlace-flecha" href="{{ c.data.enlace_diario }}" target="_blank" rel="noopener">Leer en La Discusión{% if c.data.pagina %} (p. {{ c.data.pagina }}){% endif %} {{ icono("flecha") }}</a>{% endif %}
           {%- if relacionado %}<a class="recorte__vinculo" href="{{ relacionado.url }}">Reflexión ampliada: {{ relacionado.data.title }}</a>{% endif %}
         </div>
       </article>

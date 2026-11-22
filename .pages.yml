@@ -72,6 +72,7 @@ content:
         default: columna
       - { name: firma, label: Firma, type: string, default: Juan Carlos Alvear Sepúlveda }
       - { name: firma_titulo, label: Título bajo la firma, type: string, default: "Ingeniero Comercial, MBA" }
+      - { name: enlace_diario, label: "Vínculo a la edición original en el diario (dirección completa, https://...)", type: string }
       - { name: recorte, label: Recorte o facsímil de la edición impresa, type: image, options: { media: imagenes } }
       - { name: articulo_relacionado, label: "Dirección del artículo relacionado del sitio (ej. /publicaciones/nombre-del-articulo/)", type: string }
       - { name: borrador, label: Borrador (no publicar todavía), type: boolean, default: false }

@@ -7,6 +7,7 @@ medio_sitio: https://www.ladiscusion.cl
 seccion: Cartas al Director
 pagina: "3"
 edicion: "Año 156 · Nº 51.932"
+enlace_diario: https://diariopapel.ladiscusion.cl/papeldigital/2026/noviembre/07112026/07112026.pdf
 formato: columna
 firma: Juan Carlos Alvear Sepúlveda
 firma_titulo: Ingeniero Comercial, MBA
