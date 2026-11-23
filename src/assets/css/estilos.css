@@ -522,3 +522,127 @@ main:focus { outline: none; }
 @media print { .facsimil, .vinculo-articulo { break-inside: avoid; } }
 .vinculo-articulo .enlace-flecha, .vinculo-prensa .enlace-flecha { margin-bottom: 0; }
 .enlace-diario { margin: 1.5rem 0 0; }
+
+/* =========================================================
+   Hito institucional (En la prensa): dossier con recortes
+   ========================================================= */
+.dosier__cabecera { padding-bottom: clamp(2.4rem, 5vw, 3.6rem); }
+.dosier__portada { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: clamp(1rem, 3vw, 2rem); align-items: center; margin-top: clamp(2rem, 4vw, 2.8rem); max-width: 62rem; }
+.dosier__titular { display: block; background: var(--papel); border: 1px solid var(--gris-300); border-radius: 3px; padding: .55rem .55rem .35rem; box-shadow: 0 18px 40px -14px rgba(0, 0, 0, .55); transition: transform var(--transicion), box-shadow var(--transicion); text-decoration: none; }
+.dosier__titular img { width: 100%; height: auto; }
+.dosier__titular--a { transform: rotate(-1.1deg); }
+.dosier__titular--b { transform: rotate(1.3deg); }
+.dosier__titular:hover { transform: rotate(0) scale(1.015); box-shadow: 0 24px 50px -14px rgba(0, 0, 0, .65); }
+.dosier__titular-pie { display: block; font-family: var(--diario-texto); font-size: .78rem; color: #444; padding: .35rem .1rem .1rem; }
+.dosier__cifras .cifra__valor { font-size: clamp(1.7rem, 3vw, 2.3rem); }
+
+.dosier__etiqueta { font-family: var(--sans); font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--petroleo-700); margin: 0 0 .8rem; }
+.dosier__participacion .dosier__texto { font-family: var(--serif); font-size: clamp(1.1rem, 2vw, 1.28rem); line-height: 1.7; color: var(--tinta); border-left: 4px solid var(--petroleo-500); padding-left: clamp(1rem, 3vw, 1.6rem); }
+.dosier__nota { font-size: .86rem; color: var(--gris-500); line-height: 1.55; margin: 1.1rem 0 0; }
+
+/* Cronología */
+.dosier__linea { list-style: none; margin: 2.2rem 0 0; padding: 0 0 0 1.8rem; position: relative; }
+.dosier__linea::before { content: ""; position: absolute; left: .5rem; top: .4rem; bottom: .4rem; width: 2px; background: linear-gradient(var(--petroleo-500), var(--gris-300)); }
+.dosier__hito { position: relative; padding: 0 0 2rem 1rem; }
+.dosier__hito:last-child { padding-bottom: 0; }
+.dosier__hito::before { content: ""; position: absolute; left: -1.62rem; top: .35rem; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--petroleo-500); }
+.dosier__hito--clave::before { background: #e3a33b; border-color: var(--marino-900); width: 18px; height: 18px; left: -1.8rem; top: .3rem; }
+.dosier__fecha { display: block; font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--petroleo-700); margin-bottom: .25rem; }
+.dosier__hito h3 { font-size: 1.2rem; margin-bottom: .35rem; }
+.dosier__hito p { color: var(--gris-600); margin-bottom: .45rem; }
+.dosier__ver { font-size: .88rem; font-weight: 600; }
+
+/* Registro de prensa */
+.dosier__medios { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem clamp(1.4rem, 3vw, 2.6rem); margin-top: 2rem; align-items: start; }
+.dosier__medio { background: var(--papel); border: 1px solid var(--gris-200); border-top: 6px solid #a9abad; border-radius: 4px; padding: 1.1rem clamp(1rem, 3vw, 1.6rem) 1.4rem; box-shadow: var(--sombra); font-family: var(--diario-texto); }
+.dosier__medio-nombre { font-family: var(--diario-titular); font-weight: 900; font-size: 1.4rem; margin: 0; color: #111; line-height: 1.15; }
+.dosier__medio-meta { font-size: .86rem; color: #444; margin: .2rem 0 1rem; padding-bottom: .6rem; border-bottom: 1px solid #c9c9c4; }
+.dosier__marco { display: block; border: 1px solid var(--gris-300); background: #fff; box-shadow: var(--sombra); cursor: zoom-in; transition: box-shadow var(--transicion); }
+.dosier__marco:hover { box-shadow: var(--sombra-alta); }
+.dosier__marco img { width: 100%; height: auto; }
+.dosier__marco--cifras { margin-top: 1rem; }
+.dosier__pie { font-size: .86rem; color: #444; margin: .5rem 0 0; }
+.dosier__acciones { display: flex; flex-wrap: wrap; gap: .3rem 1.4rem; margin-top: 1rem; font-family: var(--sans); }
+.dosier__acciones .enlace-flecha { margin: 0; }
+
+/* Comisión */
+.dosier__dos { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(1.6rem, 4vw, 3.2rem); align-items: center; }
+.dosier__figura { margin: 0; }
+.dosier__figura figcaption { font-size: .84rem; color: var(--gris-500); margin-top: .5rem; }
+
+/* Tabla */
+.dosier__tabla-envoltorio { overflow-x: auto; margin-top: 1.6rem; border: 1px solid var(--gris-200); border-radius: var(--radio-grande); box-shadow: var(--sombra); background: #fff; }
+.dosier__tabla { width: 100%; border-collapse: collapse; font-size: .95rem; min-width: 34rem; }
+.dosier__tabla caption { text-align: left; padding: 1rem 1.2rem; font-size: .88rem; color: var(--gris-600); caption-side: top; border-bottom: 1px solid var(--gris-200); }
+.dosier__tabla th, .dosier__tabla td { padding: .7rem 1.2rem; border-bottom: 1px solid var(--gris-100); text-align: left; }
+.dosier__tabla thead th { background: var(--marino-900); color: #fff; font-weight: 600; font-size: .82rem; letter-spacing: .04em; border-bottom: 0; }
+.dosier__tabla tbody th { font-weight: 600; color: var(--marino-900); }
+.dosier__tabla .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dosier__tabla tbody tr:first-child { background: var(--petroleo-50); }
+.dosier__tabla tbody tr:last-child th, .dosier__tabla tbody tr:last-child td { border-bottom: 0; }
+
+/* Fuentes y galería */
+.dosier__fuentes { list-style: none; margin: 1.4rem 0 0; padding: 0; display: grid; gap: .9rem; }
+.dosier__fuentes li { background: #fff; border: 1px solid var(--gris-200); border-left: 4px solid var(--petroleo-500); border-radius: var(--radio); padding: .9rem 1.1rem; }
+.dosier__fuentes a { font-weight: 600; display: block; }
+.dosier__fuentes span { display: block; font-size: .84rem; color: var(--gris-500); margin-top: .2rem; }
+.dosier__galeria { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; margin-top: 1.8rem; }
+.dosier__pagina { display: block; text-decoration: none; color: var(--marino-900); background: var(--gris-50); border: 1px solid var(--gris-200); border-radius: var(--radio); padding: .6rem .6rem .5rem; transition: box-shadow var(--transicion), transform var(--transicion); cursor: zoom-in; }
+.dosier__pagina:hover { box-shadow: var(--sombra-alta); transform: translateY(-3px); }
+.dosier__pagina img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; background: #fff; }
+.dosier__pagina span { display: block; font-size: .82rem; font-weight: 600; margin-top: .45rem; text-align: center; }
+.dosier__cierre { padding-top: clamp(2.4rem, 5vw, 3.4rem); padding-bottom: clamp(2.4rem, 5vw, 3.4rem); }
+
+/* Visor ampliable */
+.visor { position: fixed; inset: 0; z-index: 200; background: rgba(7, 19, 40, .94); display: none; flex-direction: column; }
+.visor.abierto { display: flex; }
+.visor__barra { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem 1rem; color: #dbe5f1; font-size: .92rem; }
+.visor__leyenda { margin: 0; flex: 1; line-height: 1.4; }
+.visor__botones { display: flex; gap: .4rem; flex: none; }
+.visor__boton { background: rgba(255, 255, 255, .1); color: #fff; border: 1px solid rgba(255, 255, 255, .25); border-radius: var(--radio); min-width: 2.6rem; height: 2.6rem; font: inherit; font-size: 1.05rem; cursor: pointer; padding: 0 .7rem; }
+.visor__boton:hover { background: rgba(255, 255, 255, .22); }
+.visor__boton[disabled] { opacity: .35; cursor: default; }
+.visor__escenario { flex: 1; overflow: auto; display: flex; align-items: flex-start; justify-content: center; padding: 0 1rem 1.5rem; -webkit-overflow-scrolling: touch; }
+.visor__img { max-width: 100%; max-height: calc(100vh - 5.5rem); width: auto; height: auto; background: #fff; box-shadow: 0 20px 60px rgba(0, 0, 0, .6); cursor: zoom-in; margin: auto; }
+.visor.ampliado .visor__escenario { align-items: flex-start; justify-content: flex-start; }
+.visor.ampliado .visor__img { max-width: none; max-height: none; width: min(190vw, 2400px); cursor: zoom-out; margin: 0 auto; }
+body.visor-abierto { overflow: hidden; }
+
+@media (max-width: 900px) {
+  .dosier__galeria { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dosier__dos { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .dosier__portada, .dosier__medios { grid-template-columns: 1fr; }
+  .dosier__titular--a, .dosier__titular--b { transform: none; }
+  .dosier__titular--b { max-width: 20rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dosier__titular, .dosier__titular:hover { transform: none; transition: none; }
+}
+@media print { .visor { display: none !important; } .dosier__titular { box-shadow: none; transform: none; } }
+
+/* Tarjeta destacada del hito en «En la prensa» */
+.dosier-destacado { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(1.4rem, 4vw, 3rem); align-items: center; background: var(--marino-900); color: #c3d0df; border-radius: var(--radio-grande); padding: clamp(1.4rem, 4vw, 2.6rem); margin-bottom: clamp(2rem, 4vw, 3rem); box-shadow: var(--sombra-alta); position: relative; overflow: hidden; }
+.dosier-destacado__etiqueta { font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #8fd0dc; margin: 0 0 .7rem; }
+.dosier-destacado__titulo { color: #fff; font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: .7rem; }
+.dosier-destacado__texto { margin-bottom: 1.2rem; }
+.dosier-destacado .enlace-flecha { color: #fff; }
+.dosier-destacado__imagen { display: block; background: var(--papel); padding: .5rem; border-radius: 3px; box-shadow: 0 18px 40px -14px rgba(0, 0, 0, .6); transform: rotate(1deg); transition: transform var(--transicion); }
+.dosier-destacado__imagen:hover { transform: rotate(0); }
+@media (max-width: 760px) { .dosier-destacado { grid-template-columns: 1fr; } .dosier-destacado__imagen { transform: none; } }
+
+/* Dosier: insignia y tarjeta de participación */
+.dosier__insignia { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; margin: 0 0 1.2rem; font-size: .9rem; color: #dbe9ee; }
+.dosier__insignia span { background: #e3a33b; color: #1a1205; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: .76rem; padding: .35rem .8rem; border-radius: 999px; }
+.dosier__perfil { display: grid; grid-template-columns: minmax(180px, 280px) minmax(0, 1fr); gap: clamp(1.4rem, 4vw, 3rem); align-items: center; background: linear-gradient(160deg, var(--petroleo-50), #fff); border: 1px solid var(--gris-200); border-left: 6px solid var(--petroleo-500); border-radius: var(--radio-grande); padding: clamp(1.2rem, 3vw, 2.2rem); box-shadow: var(--sombra-alta); }
+.dosier__retrato { margin: 0; }
+.dosier__retrato img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: var(--radio-grande); box-shadow: var(--sombra); }
+.dosier__nombre { font-family: var(--serif); font-weight: 700; font-size: clamp(1.5rem, 3vw, 2rem); color: var(--marino-900); margin: 0 0 .15rem; line-height: 1.15; }
+.dosier__cargo { color: var(--petroleo-700); font-weight: 600; font-size: .95rem; margin: 0 0 1.1rem; }
+.dosier__perfil .dosier__texto { font-family: var(--serif); font-size: clamp(1.02rem, 1.8vw, 1.15rem); line-height: 1.7; }
+.dosier__chips { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 1rem 0 0; }
+.dosier__chips li { background: var(--marino-900); color: #fff; font-size: .8rem; font-weight: 600; padding: .35rem .85rem; border-radius: 999px; }
+.dosier__contexto { max-width: 52rem; margin: 2rem auto 0; }
+.dosier__lead { font-size: 1.1rem; color: #354c5c; line-height: 1.7; }
+@media (max-width: 760px) { .dosier__perfil { grid-template-columns: 1fr; } .dosier__retrato { max-width: 220px; } }

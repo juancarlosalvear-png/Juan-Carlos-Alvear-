@@ -1,0 +1,252 @@
+---
+layout: layouts/base.njk
+---
+{%- from "partials/iconos.njk" import icono -%}
+{%- set urlCompleta = entorno.url + page.url -%}
+{%- set carpeta = "/media/imagenes/prensa/hito-nhrn-2017/" -%}
+<article class="dosier">
+
+  <header class="cabecera cabecera--articulo dosier__cabecera">
+    <div class="contenedor">
+      <p class="antetitulo"><a href="/en-la-prensa/">En la prensa</a> · Hito institucional</p>
+      <h1 class="cabecera__titulo">{{ title }}</h1>
+      <p class="dosier__insignia"><span>Integrante de la comisión evaluadora</span> Servicio de Salud Ñuble · 2017</p>
+      <p class="cabecera__bajada">La segunda licitación de Diseño y Construcción del Nuevo Hospital Regional de Ñuble, tal como la registró la prensa regional: ocho ofertas, una comisión evaluadora y un proceso que debía concluir con la adjudicación de la obra.</p>
+
+      <div class="dosier__portada" aria-label="Titulares de la edición del 29 de marzo de 2017">
+        <a class="dosier__titular dosier__titular--a" href="{{ carpeta }}discusion-p4.jpg" data-visor data-visor-grupo="paginas" data-leyenda="Diario La Discusión, miércoles 29 de marzo de 2017, página 4: «Ocho empresas compiten en segunda licitación del hospital».">
+          <img src="{{ carpeta }}recorte-titular-discusion.jpg" alt="Titular del Diario La Discusión: «Ocho empresas compiten en segunda licitación del hospital»" width="1130" height="305">
+          <span class="dosier__titular-pie">Diario La Discusión · 29 mar 2017 · p. 4</span>
+        </a>
+        <a class="dosier__titular dosier__titular--b" href="{{ carpeta }}cronica-p2.jpg" data-visor data-visor-grupo="paginas" data-leyenda="Crónica Chillán, miércoles 29 de marzo de 2017, página 2 (Tema del día): «Ocho empresas postularon para construir el nuevo hospital».">
+          <img src="{{ carpeta }}recorte-titular-cronica.jpg" alt="Titular de Crónica Chillán: «Ocho empresas postularon para construir el nuevo hospital»" width="530" height="500">
+          <span class="dosier__titular-pie">Crónica Chillán · 29 mar 2017 · p. 2</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="cifras dosier__cifras" aria-label="Cifras del proceso según la prensa">
+    <div class="contenedor">
+      <div class="cifras__rejilla">
+        <div class="cifra"><p class="cifra__valor">8</p><p class="cifra__texto">empresas presentaron ofertas en la segunda licitación; una más que en el proceso anterior.</p></div>
+        <div class="cifra"><p class="cifra__valor">7</p><p class="cifra__texto">profesionales del Servicio de Salud Ñuble integraban la comisión evaluadora.</p></div>
+        <div class="cifra"><p class="cifra__valor">30</p><p class="cifra__texto">días hábiles (43 corridos) de plazo para evaluar las ofertas.</p></div>
+        <div class="cifra"><p class="cifra__valor">$161 mil millones</p><p class="cifra__texto">presupuesto que el Gobierno tenía planeado invertir en el hospital.</p></div>
+      </div>
+    </div>
+  </section>
+
+  {#- Participación -#}
+  <section class="seccion dosier__participacion" aria-labelledby="t-participacion">
+    <div class="contenedor">
+      <div class="dosier__perfil">
+        <figure class="dosier__retrato">
+          <img src="/media/imagenes/juan-carlos-alvear-retrato.jpg" alt="Retrato de {{ site.nombre }}" width="400" height="500" loading="lazy">
+        </figure>
+        <div>
+          <p class="dosier__etiqueta" id="t-participacion">Mi participación</p>
+          <p class="dosier__nombre">{{ site.nombre }}</p>
+          <p class="dosier__cargo">Ingeniero Comercial, MBA · Integrante de la comisión evaluadora del Servicio de Salud Ñuble</p>
+          <div class="dosier__texto prosa">{{ content | safe }}</div>
+          <ul class="dosier__chips" aria-label="Aspectos de la evaluación">
+            <li>Rigor técnico</li><li>Apego a las bases</li><li>Imparcialidad</li><li>Control de la Contraloría</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dosier__contexto">
+        <p class="dosier__lead">En marzo de 2017, el proceso de licitación para el diseño y construcción del Nuevo Hospital Regional de Ñuble avanzó a la apertura y evaluación de las ofertas presentadas por las empresas constructoras. La prensa regional documentó la competencia entre los oferentes, la revisión de las propuestas técnicas y económicas y el trabajo de la comisión evaluadora del Servicio de Salud Ñuble.</p>
+        <p class="dosier__nota">La prensa describe a la comisión de forma colectiva y no individualiza a sus integrantes; los registros que siguen acreditan el proceso y su conformación.</p>
+      </div>
+    </div>
+  </section>
+
+  {#- Línea de tiempo -#}
+  <section class="seccion seccion--gris" id="cronologia" aria-labelledby="t-cronologia">
+    <div class="contenedor contenedor--estrecho">
+      <p class="dosier__etiqueta">Cronología</p>
+      <h2 class="seccion__titulo" id="t-cronologia">Del concurso fallido a la adjudicación</h2>
+      <ol class="dosier__linea">
+        <li class="dosier__hito revelar">
+          <time class="dosier__fecha" datetime="2016-11">Noviembre de 2016</time>
+          <h3>Primera licitación sin adjudicación</h3>
+          <p>La Contraloría General de la República detectó errores administrativos en los antecedentes de la primera licitación, que no logró concretarse.</p>
+          <a class="dosier__ver" href="#registro-prensa">Ver registro en prensa</a>
+        </li>
+        <li class="dosier__hito revelar">
+          <time class="dosier__fecha" datetime="2016-12-12">12 de diciembre de 2016</time>
+          <h3>Publicación de las nuevas bases</h3>
+          <p>El Servicio de Salud Ñuble publica las bases de la segunda licitación de Diseño y Construcción.</p>
+          <a class="dosier__ver" href="#registro-prensa">Ver registro en prensa</a>
+        </li>
+        <li class="dosier__hito dosier__hito--clave revelar">
+          <time class="dosier__fecha" datetime="2017-03-28">28 de marzo de 2017</time>
+          <h3>Apertura técnica y económica de las ofertas</h3>
+          <p>Ocho empresas compiten. La oferta más baja asciende a $151.843.825.230 y la más alta a $199.632.289.062. La comisión evaluadora comienza su trabajo.</p>
+          <a class="dosier__ver" href="#registro-prensa">Ver registro en prensa</a>
+        </li>
+        <li class="dosier__hito revelar">
+          <time class="dosier__fecha" datetime="2017-04">Abril – mayo de 2017</time>
+          <h3>Evaluación de las ofertas</h3>
+          <p>La comisión dispone de 30 días hábiles para el análisis detallado y para elaborar la propuesta de adjudicación, que debe contar con el visto bueno de la Contraloría.</p>
+          <a class="dosier__ver" href="#comision">Ver la comisión evaluadora</a>
+        </li>
+        <li class="dosier__hito dosier__hito--clave revelar">
+          <time class="dosier__fecha" datetime="2017-07-27">27 de julio de 2017</time>
+          <h3>La Contraloría aprueba y se adjudica el proyecto</h3>
+          <p>El Servicio de Salud Ñuble informa que la Contraloría aprobó el diseño y construcción del nuevo hospital, adjudicado al Grupo INSO Chile.</p>
+          <a class="dosier__ver" href="#fuentes">Ver fuente oficial</a>
+        </li>
+        <li class="dosier__hito revelar">
+          <time class="dosier__fecha" datetime="2017-09-25">25 de septiembre de 2017</time>
+          <h3>Firma del contrato</h3>
+          <p>El Servicio de Salud Ñuble y el Grupo INSO Chile firman el contrato que da inicio al diseño y construcción.</p>
+          <a class="dosier__ver" href="#fuentes">Ver fuente oficial</a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  {#- Registro de prensa -#}
+  <section class="seccion" id="registro-prensa" aria-labelledby="t-registro">
+    <div class="contenedor">
+      <p class="dosier__etiqueta">Respaldo documental</p>
+      <h2 class="seccion__titulo" id="t-registro">Lo que registró la prensa</h2>
+      <p class="seccion__bajada">Ambas ediciones del miércoles 29 de marzo de 2017 informaron sobre la apertura de las ofertas. Haga clic en cualquier recorte para ver la página impresa completa y ampliarla.</p>
+
+      <div class="dosier__medios">
+
+        <article class="dosier__medio revelar">
+          <header class="dosier__medio-cab">
+            <p class="dosier__medio-nombre">Diario La Discusión</p>
+            <p class="dosier__medio-meta">Sección Ciudad · páginas 4 y 5 · miércoles 29 de marzo de 2017</p>
+          </header>
+          <a class="dosier__marco" href="{{ carpeta }}recorte-sesion-discusion.jpg" data-visor data-visor-grupo="recortes" data-leyenda="La Discusión, p. 4. La apertura técnica y económica en el Servicio de Salud Ñuble, con integrantes del equipo frente a la pantalla de la licitación.">
+            <img src="{{ carpeta }}recorte-sesion-discusion.jpg" alt="Fotografía publicada por La Discusión de la apertura de las ofertas, con integrantes del equipo del Servicio de Salud Ñuble reunidos frente a una pantalla" width="840" height="725" loading="lazy">
+          </a>
+          <p class="dosier__pie">Apertura técnica y económica de las ofertas en el Servicio de Salud Ñuble.</p>
+          <div class="dosier__acciones">
+            <a class="enlace-flecha" href="{{ carpeta }}discusion-p4.jpg" data-visor data-visor-grupo="paginas" data-leyenda="Diario La Discusión, miércoles 29 de marzo de 2017, página 4 (Ciudad).">Ver página 4 completa {{ icono("flecha") }}</a>
+            <a class="enlace-flecha" href="{{ carpeta }}discusion-p5.jpg" data-visor data-visor-grupo="paginas" data-leyenda="Diario La Discusión, miércoles 29 de marzo de 2017, página 5.">Ver página 5 completa {{ icono("flecha") }}</a>
+          </div>
+        </article>
+
+        <article class="dosier__medio revelar">
+          <header class="dosier__medio-cab">
+            <p class="dosier__medio-nombre">Crónica Chillán</p>
+            <p class="dosier__medio-meta">Tema del día · páginas 2 y 3 · miércoles 29 de marzo de 2017</p>
+          </header>
+          <a class="dosier__marco" href="{{ carpeta }}recorte-sesion-cronica.jpg" data-visor data-visor-grupo="recortes" data-leyenda="Crónica Chillán, p. 2. Apertura técnica de las ofertas en el Servicio de Salud Ñuble.">
+            <img src="{{ carpeta }}recorte-sesion-cronica.jpg" alt="Fotografía publicada por Crónica Chillán de la apertura técnica de las ofertas en el Servicio de Salud Ñuble" width="530" height="337" loading="lazy">
+          </a>
+          <p class="dosier__pie">Apertura técnica de las ofertas, un día antes de la publicación.</p>
+          <a class="dosier__marco dosier__marco--cifras" href="{{ carpeta }}recorte-cifras-cronica.jpg" data-visor data-visor-grupo="recortes" data-leyenda="Crónica Chillán, p. 3. Cifras del proceso: 8 empresas y 2.000 trabajadores.">
+            <img src="{{ carpeta }}recorte-cifras-cronica.jpg" alt="Destacado de Crónica Chillán con las cifras: 8 empresas y 2.000 trabajadores" width="685" height="110" loading="lazy">
+          </a>
+          <div class="dosier__acciones">
+            <a class="enlace-flecha" href="{{ carpeta }}cronica-p2.jpg" data-visor data-visor-grupo="paginas" data-leyenda="Crónica Chillán, miércoles 29 de marzo de 2017, página 2 (Tema del día).">Ver página 2 completa {{ icono("flecha") }}</a>
+            <a class="enlace-flecha" href="{{ carpeta }}cronica-p3.jpg" data-visor data-visor-grupo="paginas" data-leyenda="Crónica Chillán, miércoles 29 de marzo de 2017, página 3.">Ver página 3 completa {{ icono("flecha") }}</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {#- Comisión evaluadora -#}
+  <section class="seccion seccion--gris" id="comision" aria-labelledby="t-comision">
+    <div class="contenedor">
+      <div class="dosier__dos">
+        <div>
+          <p class="dosier__etiqueta">La comisión evaluadora</p>
+          <h2 class="seccion__titulo" id="t-comision">Siete profesionales del Servicio de Salud Ñuble</h2>
+          <p>Según el registro de La Discusión, la comisión estaba conformada por siete profesionales del Servicio de Salud Ñuble, entre ellos la subdirectora de Recursos Físicos y Financieros y el coordinador general del proyecto Nuevo Hospital Provincial.</p>
+          <p>Crónica Chillán informó que, tras la apertura, la comisión contaba con 30 días hábiles para el análisis detallado de las ofertas con fundamentos técnicos, financieros y jurídicos, y que debía emitir un informe para decidir a qué empresa adjudicar.</p>
+          <p>La evaluación consideraba, además del precio, la calidad técnica de la propuesta, la capacidad financiera y la experiencia demostrable en el diseño de establecimientos hospitalarios similares. La propuesta de adjudicación debía ser aprobada por la Contraloría.</p>
+        </div>
+        <figure class="dosier__figura">
+          <a class="dosier__marco" href="{{ carpeta }}recorte-comision-discusion.jpg" data-visor data-visor-grupo="recortes" data-leyenda="La Discusión, p. 4. Recuadro «Comisión evaluadora».">
+            <img src="{{ carpeta }}recorte-comision-discusion.jpg" alt="Recuadro de La Discusión titulado «Comisión evaluadora»" width="300" height="170" loading="lazy">
+          </a>
+          <figcaption>Recuadro «Comisión evaluadora», Diario La Discusión, p. 4.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  {#- Tabla de ofertas -#}
+  <section class="seccion" id="ofertas" aria-labelledby="t-ofertas">
+    <div class="contenedor">
+      <p class="dosier__etiqueta">Las ofertas</p>
+      <h2 class="seccion__titulo" id="t-ofertas">Ocho propuestas, más cercanas al presupuesto</h2>
+      <p class="seccion__bajada">Las empresas que se presentaron por segunda vez rebajaron sus ofertas respecto de la licitación anterior. Un experto consultado por Crónica Chillán atribuyó esa baja, en parte, a la menor incertidumbre sobre el valor de la competencia.</p>
+
+      <div class="dosier__tabla-envoltorio">
+        <table class="dosier__tabla">
+          <caption>Apertura de la licitación de Diseño y Construcción del Nuevo Hospital de Ñuble. Montos en pesos, con IVA, ordenados de menor a mayor oferta actual.</caption>
+          <thead>
+            <tr><th scope="col">Empresa</th><th scope="col" class="num">Licitación anterior</th><th scope="col" class="num">Licitación actual</th><th scope="col" class="num">Variación</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Astaldi S.p.A.</th><td class="num">$187.628.319.411</td><td class="num">$151.843.825.230</td><td class="num">−19 %</td></tr>
+            <tr><th scope="row">INSO Chile</th><td class="num">—</td><td class="num">$154.594.932.148</td><td class="num">—</td></tr>
+            <tr><th scope="row">FCC Construcción S.A.</th><td class="num">$200.030.274.348</td><td class="num">$162.710.646.968</td><td class="num">−18,6 %</td></tr>
+            <tr><th scope="row">Acciona</th><td class="num">—</td><td class="num">$163.509.564.357</td><td class="num">—</td></tr>
+            <tr><th scope="row">Sacyr Chile S.A.</th><td class="num">$186.352.516.672</td><td class="num">$177.981.391.683</td><td class="num">−4,5 %</td></tr>
+            <tr><th scope="row">CSJ Agencia</th><td class="num">$194.583.323.311</td><td class="num">$183.745.567.722</td><td class="num">−5,6 %</td></tr>
+            <tr><th scope="row">Moller</th><td class="num">$201.196.657.053</td><td class="num">$189.953.412.018</td><td class="num">−5,6 %</td></tr>
+            <tr><th scope="row">Dragados S.A.</th><td class="num">—</td><td class="num">$199.632.289.062</td><td class="num">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="dosier__nota">Transcripción de la tabla publicada por Crónica Chillán el 29 de marzo de 2017 (p. 3). En dos montos, La Discusión consigna una diferencia de un peso respecto de esa tabla. Se muestran las cifras de Crónica Chillán. <a href="{{ carpeta }}recorte-tabla-cronica.jpg" data-visor data-visor-grupo="recortes" data-leyenda="Crónica Chillán, p. 3. Tabla «Apertura licitación Diseño y Construcción Nuevo Hospital de Ñuble».">Ver la tabla original</a>.</p>
+    </div>
+  </section>
+
+  {#- Desenlace -#}
+  <section class="seccion seccion--gris" id="fuentes" aria-labelledby="t-desenlace">
+    <div class="contenedor contenedor--estrecho">
+      <p class="dosier__etiqueta">Desenlace</p>
+      <h2 class="seccion__titulo" id="t-desenlace">La adjudicación y el inicio de la obra</h2>
+      <p>Tras la evaluación y el trámite ante la Contraloría, el Servicio de Salud Ñuble informó, el 27 de julio de 2017, que el organismo contralor aprobó el diseño y construcción del nuevo hospital, adjudicado al Grupo INSO Chile. El contrato se firmó el 25 de septiembre de 2017.</p>
+      <ul class="dosier__fuentes">
+        <li><a href="https://www.minsal.cl/contraloria-aprobo-el-diseno-y-construccion-del-nuevo-hospital-de-nuble/" target="_blank" rel="noopener">Contraloría aprueba diseño y construcción de nuevo Hospital de Ñuble</a><span>Ministerio de Salud · Chillán, 27 de julio de 2017</span></li>
+        <li><a href="https://www.minsal.cl/?p=28311" target="_blank" rel="noopener">Servicio de Salud Ñuble y el Grupo INSO firmaron contrato para iniciar el diseño y construcción del nuevo Hospital de Ñuble</a><span>Ministerio de Salud · 25 de septiembre de 2017</span></li>
+      </ul>
+    </div>
+  </section>
+
+  {#- Galería de páginas -#}
+  <section class="seccion" id="paginas" aria-labelledby="t-paginas">
+    <div class="contenedor">
+      <p class="dosier__etiqueta">Facsímiles</p>
+      <h2 class="seccion__titulo" id="t-paginas">Las cuatro páginas, completas</h2>
+      <div class="dosier__galeria">
+        <a class="dosier__pagina" href="{{ carpeta }}cronica-p2.jpg" data-visor data-visor-grupo="paginas" data-leyenda="Crónica Chillán, miércoles 29 de marzo de 2017, página 2 (Tema del día)."><img src="{{ carpeta }}cronica-p2.jpg" alt="Página 2 de Crónica Chillán del 29 de marzo de 2017, sección Tema del día" width="1200" height="1600" loading="lazy"><span>Crónica Chillán · p. 2</span></a>
+        <a class="dosier__pagina" href="{{ carpeta }}cronica-p3.jpg" data-visor data-visor-grupo="paginas" data-leyenda="Crónica Chillán, miércoles 29 de marzo de 2017, página 3."><img src="{{ carpeta }}cronica-p3.jpg" alt="Página 3 de Crónica Chillán del 29 de marzo de 2017, con la tabla de ofertas" width="1200" height="1600" loading="lazy"><span>Crónica Chillán · p. 3</span></a>
+        <a class="dosier__pagina" href="{{ carpeta }}discusion-p4.jpg" data-visor data-visor-grupo="paginas" data-leyenda="Diario La Discusión, miércoles 29 de marzo de 2017, página 4 (Ciudad)."><img src="{{ carpeta }}discusion-p4.jpg" alt="Página 4 de La Discusión del 29 de marzo de 2017, sección Ciudad" width="1200" height="1600" loading="lazy"><span>La Discusión · p. 4</span></a>
+        <a class="dosier__pagina" href="{{ carpeta }}discusion-p5.jpg" data-visor data-visor-grupo="paginas" data-leyenda="Diario La Discusión, miércoles 29 de marzo de 2017, página 5."><img src="{{ carpeta }}discusion-p5.jpg" alt="Página 5 de La Discusión del 29 de marzo de 2017" width="1200" height="1600" loading="lazy"><span>La Discusión · p. 5</span></a>
+      </div>
+      <p class="dosier__nota">Fotografías de las ediciones impresas del miércoles 29 de marzo de 2017 de Crónica Chillán y del Diario La Discusión, reproducidas como respaldo documental. Los textos y fotografías pertenecen a sus respectivos medios y autores.</p>
+    </div>
+  </section>
+
+  <section class="seccion seccion--gris dosier__cierre">
+    <div class="contenedor contenedor--estrecho">
+      <section class="referencias" aria-labelledby="titulo-cita">
+        <h2 id="titulo-cita">Cómo citar estos registros</h2>
+        <p class="cita-sugerida">Crónica Chillán (2017, 29 de marzo). Ocho empresas postularon para construir el nuevo hospital. <i>Crónica Chillán</i>, pp. 2–3. · Diario La Discusión (2017, 29 de marzo). Ocho empresas compiten en segunda licitación del hospital. <i>La Discusión</i>, pp. 4–5.</p>
+      </section>
+      <div class="compartir" aria-label="Compartir esta página">
+        <span class="compartir__titulo">Compartir</span>
+        <a class="compartir__boton" href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlCompleta | urlencode }}" target="_blank" rel="noopener" aria-label="Compartir en LinkedIn">{{ icono("linkedin") }}</a>
+        <a class="compartir__boton" href="https://wa.me/?text={{ (title + ' ' + urlCompleta) | urlencode }}" target="_blank" rel="noopener" aria-label="Compartir por WhatsApp">{{ icono("whatsapp") }}</a>
+        <a class="compartir__boton" href="https://x.com/intent/post?url={{ urlCompleta | urlencode }}&text={{ title | urlencode }}" target="_blank" rel="noopener" aria-label="Compartir en X">{{ icono("x") }}</a>
+        <a class="compartir__boton" href="mailto:?subject={{ title | urlencode }}&body={{ urlCompleta | urlencode }}" aria-label="Compartir por correo">{{ icono("correo") }}</a>
+        <button class="compartir__boton" type="button" data-copiar="{{ urlCompleta }}" aria-label="Copiar enlace">{{ icono("copiar") }}</button>
+        <span class="compartir__aviso" data-copiar-aviso aria-live="polite"></span>
+      </div>
+      <p class="articulo__nota">Página publicada a título personal; no representa la posición oficial de ninguna institución.</p>
+      <a class="enlace-flecha" href="/en-la-prensa/">Volver a En la prensa {{ icono("flecha") }}</a>
+    </div>
+  </section>
+</article>

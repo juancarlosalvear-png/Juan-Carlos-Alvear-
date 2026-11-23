@@ -10,9 +10,22 @@ descripcion_pagina: Cartas al Director de Juan Carlos Alvear Sepúlveda publicad
 {%- from "partials/iconos.njk" import icono -%}
 <section class="seccion">
   <div class="contenedor">
+    {%- for c in collections.prensa %}{% if c.data.dossier %}
+    <article class="dosier-destacado">
+      <div>
+        <p class="dosier-destacado__etiqueta">Hito institucional · {{ c.data.date | fechaLarga }}</p>
+        <h2 class="dosier-destacado__titulo">{{ c.data.title }}</h2>
+        <p class="dosier-destacado__texto">{{ c.data.resumen }}</p>
+        <a class="enlace-flecha" href="{{ c.url }}">Ver el registro de prensa {{ icono("flecha") }}</a>
+      </div>
+      <a class="dosier-destacado__imagen" href="{{ c.url }}" aria-label="Ver el registro de prensa sobre la licitación del Nuevo Hospital Regional de Ñuble">
+        <img src="/media/imagenes/prensa/hito-nhrn-2017/recorte-titular-discusion.jpg" alt="Titular de La Discusión: «Ocho empresas compiten en segunda licitación del hospital»" width="1130" height="305" loading="lazy">
+      </a>
+    </article>
+    {%- endif %}{% endfor %}
     {%- if collections.prensa | length %}
     <div class="rejilla rejilla--2 rejilla--prensa">
-      {%- for c in collections.prensa %}
+      {%- for c in collections.prensa %}{% if not c.data.dossier %}
       {%- set relacionado = collections.publicaciones | buscarPorUrl(c.data.articulo_relacionado) %}
       <article class="recorte">
         <a class="recorte__hoja" href="{{ c.url }}" aria-label="Leer la carta «{{ c.data.title | replace('“', '') | replace('”', '') }}»">
@@ -27,7 +40,7 @@ descripcion_pagina: Cartas al Director de Juan Carlos Alvear Sepúlveda publicad
           {%- if relacionado %}<a class="recorte__vinculo" href="{{ relacionado.url }}">Reflexión ampliada: {{ relacionado.data.title }}</a>{% endif %}
         </div>
       </article>
-      {%- endfor %}
+      {%- endif %}{% endfor %}
     </div>
     {%- else %}
     <p class="vacio">Próximamente se incorporarán publicaciones en medios.</p>
