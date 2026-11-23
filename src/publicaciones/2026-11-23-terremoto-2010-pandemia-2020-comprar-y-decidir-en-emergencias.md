@@ -51,7 +51,7 @@ En ambas emergencias, comprar fue solo una parte del trabajo. Lo decisivo ocurr�
 
 ## Liderar con pocas manos
 
-Según el informe de gestión 2020-2021, el Departamento de Abastecimiento en Red funcionaba con alrededor de veinte personas, jefatura incluida, y la unidad que atiende las compras de la propia Dirección del Servicio contaba con dos ejecutivos de compra. La demanda se multiplicó de un día para otro; la dotación, no. Aprendí que en esas condiciones el liderazgo se reduce a cuatro decisiones.
+Según el informe de gestión 2020-2021, el Departamento de Abastecimiento en Red funcionaba con alrededor de veinte personas, jefatura incluida, y la unidad que atiende las compras de la propia Dirección del Servicio contaba con tres ejecutivos de compra. La demanda se multiplicó de un día para otro; la dotación, no. Aprendí que en esas condiciones el liderazgo se reduce a cuatro decisiones.
 
 **Priorizar.** Ordenar qué se compraba primero según la criticidad clínica y no según el orden de llegada de las solicitudes. **Organizar al equipo en torno a la emergencia.** Asignar funciones claras para compras, seguimiento de órdenes, recepción y distribución, de modo que cada persona supiera qué le correspondía y las decisiones no se acumularan en una sola mesa. **Coordinar con la red.** Mantener comunicación permanente con hospitales, centros de salud y equipos clínicos para ajustar lo que se compraba a lo que realmente se necesitaba. **Sostener el rigor bajo presión.** Exigir que cada trato directo tuviera su resolución fundada y su registro, aun cuando el tiempo apremiaba.
 
